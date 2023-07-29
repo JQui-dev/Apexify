@@ -1,0 +1,5 @@
+@import "/src/style/general.scss";
+
+.Stand {
+    @include fix-nav-pos;
+}

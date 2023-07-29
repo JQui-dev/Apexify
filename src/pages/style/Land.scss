@@ -1,0 +1,5 @@
+@import "/src/style/general.scss";
+
+.Land {
+    @include fix-nav-pos;
+}

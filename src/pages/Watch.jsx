@@ -7,7 +7,7 @@ import './style/Watch.scss'
 
 function Watch() {
   return (
-    <div>Watch</div>
+    <div className='Watch'>Watch</div>
   )
 }
 

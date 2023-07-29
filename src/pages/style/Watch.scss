@@ -1,0 +1,5 @@
+@import "/src/style/general.scss";
+
+.Watch {
+    @include fix-nav-pos;
+}

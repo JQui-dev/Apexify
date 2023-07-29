@@ -14,7 +14,7 @@ import Error from "./pages/Error"
 import NavBar from "./components/NavBar"
 
 // STYLE
-import './App.scss'
+import './style/App.scss'
 
 function App() {
   return (

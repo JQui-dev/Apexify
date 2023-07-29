@@ -1,0 +1,20 @@
+@mixin fix-nav-pos {
+    margin-left: 9.5rem;
+
+    width: calc(100% - 9.5rem);
+    min-height: 100vh;
+
+    padding: 1rem;
+
+    background: #111;
+    color: #fff;
+
+    @media screen and (max-width: 600px) {
+        margin-top: 4rem;
+        margin-left: 0;
+
+        padding-bottom: 5rem;
+
+        width: 100%;
+    }
+}

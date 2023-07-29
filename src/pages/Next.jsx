@@ -7,7 +7,7 @@ import './style/Next.scss'
 
 function Next() {
   return (
-    <div>Next</div>
+    <div className='Next'>Next</div>
   )
 }
 

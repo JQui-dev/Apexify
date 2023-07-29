@@ -7,7 +7,7 @@ import './style/Login.scss'
 
 function Login() {
   return (
-    <div>Login</div>
+    <div className='Login'>Login</div>
   )
 }
 

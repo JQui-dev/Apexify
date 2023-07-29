@@ -7,7 +7,7 @@ import './style/Stand.scss'
 
 function Stand() {
   return (
-    <div>Stand</div>
+    <div className='Stand'>Stand</div>
   )
 }
 
