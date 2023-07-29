@@ -1,15 +1,18 @@
 @mixin fix-nav-pos {
+    position: relative;
+    
     margin-left: 9.5rem;
 
     width: calc(100% - 9.5rem);
     min-height: 100vh;
+    
+    padding: .5rem;
 
-    padding: 1rem;
-
-    background: #111;
+    background: #111e;
     color: #fff;
 
     @media screen and (max-width: 600px) {
+        min-height: calc(100vh - 5rem);
         margin-top: 4rem;
         margin-left: 0;
 

@@ -13,7 +13,7 @@ function NavBar() {
     <div className="NavBar">
       <Link to="/" className="title">
         <h1>GP Tracker</h1>
-        <img src="/public/logo.png" alt="logo"/>
+        <img src="/logo.png" alt="logo"/>
       </Link>
       <nav>
 
@@ -37,7 +37,7 @@ function NavBar() {
           <h3>Watch</h3>
         </NavLink>
 
-        <NavLink to="/login">
+        <NavLink to="/profile">
           <GoPerson/>
           <h3>Profile</h3>
         </NavLink>

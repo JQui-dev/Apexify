@@ -8,7 +8,8 @@ import Error from "./pages/Error"
   import Last from "./pages/Last"
   import Stand from "./pages/Stand"
   import Watch from "./pages/Watch"
-  import Login from "./pages/Login.jsx"
+  import Profile from "./pages/Profile"
+  import Login from "./pages/Login"
 
 // COMPONENTS
 import NavBar from "./components/NavBar"
@@ -29,6 +30,7 @@ function App() {
           <Route path="/last" element={<Last/>}></Route>
           <Route path="/stand" element={<Stand/>}></Route>
           <Route path="/watch" element={<Watch/>}></Route>
+          <Route path="/profile" element={<Profile/>}></Route>
           <Route path="/login" element={<Login/>}></Route>
         </Routes>
       </BrowserRouter>
