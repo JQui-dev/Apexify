@@ -1,0 +1,107 @@
+.Winner {
+    overflow: hidden;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    width: 25rem;
+    aspect-ratio: 2;
+
+    @media screen and (max-width: 500px) {
+        width: 100%;
+    }
+
+    border-radius: .75rem;
+
+    background: #a00;
+
+    .driverImg {
+        z-index: 1;
+
+        width: 100%;
+        aspect-ratio: 1;
+
+        object-fit: cover;
+        scale: 1.1;
+    }
+
+    .info {
+        z-index: 10;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        gap: 1rem;
+
+        color: #000;
+        background: #fff;
+
+        border-radius: .5rem;
+
+        .name {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            & h3 {
+                font-weight: 900;
+
+                line-height: 3.5rem;
+                font-size: 5rem;
+
+            }
+            & h4 {
+                text-align: center;
+                font-size: 1rem;
+            }
+
+        }
+
+        .trophy {
+            display: flex;
+            flex-direction: column;
+
+            & svg {
+                fill: #a00;
+                font-size: 3rem;
+            }
+            & h5 {
+                line-height: .75rem;
+                font-size: .8rem;
+                text-align: center;
+            }
+        }
+    }
+    
+    @media screen and (max-width: 350px) {
+        .info {
+            gap: .25rem;
+    
+            .name {
+                & h3 {
+                    line-height: 3rem;
+                    font-size: 4rem;
+                }
+                & h4 {
+                    font-size: .75rem;
+                }
+    
+            }
+            .trophy {
+                display: flex;
+                flex-direction: column;
+    
+                & svg {
+                    font-size: 2.25rem;
+                }
+
+                & h5 {
+                    line-height: .5rem;
+                    font-size: .65rem;
+                }
+            }
+        }
+    }
+}
