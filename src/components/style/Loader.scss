@@ -1,8 +1,14 @@
+@import "/src/style/general.scss";
+
 .Loader {
     display: grid;
     place-items: center;
 
     height: calc(100vh - 1rem);
+
+    @media screen and (max-width: 600px) {
+        height: calc(100svh - var(--both)*3);
+    }
 
     .wheel {
         width: 10rem;
