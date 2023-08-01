@@ -74,7 +74,7 @@
 
 @media screen and (max-width: 600px) {
     .NavBar {
-        z-index: 999;
+        position: fixed;
         left: auto;
         bottom: 0;
         
@@ -101,6 +101,12 @@
             max-height: auto;
 
             width: 100%;
+    
+            & a {
+                & h3 {
+                    display: none;
+                }
+            }
         }
     } 
 }
