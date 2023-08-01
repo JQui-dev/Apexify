@@ -14,7 +14,7 @@
     width: calc(100% - var(--pc));
     min-height: 100svh;
     
-    padding: .5rem;
+    padding: .5rem; 
 
     background: #111e;
     color: #fff;
@@ -24,7 +24,8 @@
         margin-top: var(--top);
         margin-left: 0;
 
-        padding-bottom: var(--bottom);
+        padding-top: 1rem;
+        padding-bottom: calc(var(--bottom) + .25rem);
 
         width: 100%;
     }
