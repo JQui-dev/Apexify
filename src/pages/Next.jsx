@@ -38,11 +38,13 @@ function Next() {
       {
         loading ? <Loader/> :
         <>
-          <img className='back' src={`/assets/circuit/${data.Circuit && data.Circuit.Location.country}.jpg`}/>
+          <div className="roundWrap">
+            <img className='back' src={`/assets/circuit/${data.Circuit && data.Circuit.Location.country}.jpg`}/>
 
-          <div className="round">
-            <h3>{data.Circuit.Location.country} GP</h3>
-            <h2>ROUND {data.round}</h2>
+            <div className="round">
+              <h3>{data.Circuit.Location.country} GP</h3>
+              <h2>ROUND {data.round}</h2>
+            </div>
           </div>
 
           <div className="middle">
