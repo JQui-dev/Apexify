@@ -1,9 +1,7 @@
 :root {
     --pc: 9.5rem;
 
-    --top: 3rem;
-    --bottom: 4.75rem;
-    --both: calc(var(--top) + var(--bottom) - 4.75rem)
+    --bottom: 4rem;
 }
 
 @mixin fix-nav-pos {
@@ -12,7 +10,7 @@
     margin-left: var(--pc);
 
     width: calc(100% - var(--pc));
-    min-height: 100svh;
+    min-height: 100vh;
     
     padding: .5rem; 
 
@@ -20,12 +18,10 @@
     color: #fff;
 
     @media screen and (max-width: 600px) {
-        min-height: calc(100svh - var(--both));
-        margin-top: var(--top);
+        min-height: auto;
         margin-left: 0;
 
-        padding-top: 1rem;
-        padding-bottom: calc(var(--bottom) + .25rem);
+        padding-bottom: var(--bottom);
 
         width: 100%;
     }
