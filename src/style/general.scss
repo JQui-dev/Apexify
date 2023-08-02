@@ -21,7 +21,7 @@
         min-height: calc(100svh - var(--bottom));
         margin-left: 0;
 
-        padding-bottom: var(--bottom);
+        padding-bottom: calc(var(--bottom) * 1.1);
 
         width: 100%;
     }

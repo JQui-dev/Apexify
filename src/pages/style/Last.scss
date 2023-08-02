@@ -2,4 +2,9 @@
 
 .Last {
     @include fix-nav-pos;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: .5rem;
 }

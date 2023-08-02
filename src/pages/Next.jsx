@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 
 // COMPONENTS
 import Loader from "./../components/Loader"
+import Round from '../components/Round'
 import CDown from '../components/CDown'
 import LastYear from '../components/LastYear'
 
@@ -38,14 +39,7 @@ function Next() {
       {
         loading ? <Loader/> :
         <>
-          <div className="roundWrap">
-            <img className='back' src={`/assets/circuit/${data.Circuit && data.Circuit.Location.country}.jpg`}/>
-
-            <div className="round">
-              <h3>{data.Circuit.Location.country} GP</h3>
-              <h2>ROUND {data.round}</h2>
-            </div>
-          </div>
+          <Round country={data.Circuit.Location.country} number={data.round}/>
 
           <div className="middle">
             <div className="left">
