@@ -20,7 +20,7 @@ function Error() {
       if(count>1) {
         setCount(count - 1)
       } else {
-        // window.history.back();
+        window.history.back();
       }
     }, 1000);
   }, [ count ])
