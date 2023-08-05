@@ -25,7 +25,7 @@ function Winner({results, year}) {
                     <h5>{year}</h5>
                 </div>
             </div>
-            <img className="driverImg" src={`/assets/driver/${res.Driver.code}.png`}/>
+            <img className="driverImg" src={`/assets/driver/${res.Driver.code}.png`} loading="lazy"/>
         </>
         }
         </React.Fragment>

@@ -45,40 +45,40 @@ function Stand() {
   }
 
   return (
-    <div className='Stand'>
+    <>
       {
         loading ? <Loader/> :
-        <>
-        {
-          teams.map((team, key) => (
-            <div className='teamCard' key={key}>
-              <div className="left">
-                <h2 className={team.position>=10 && "double"}>{team.position}</h2>
-                <img src={`/assets/team/${team.Constructor.constructorId}.png`}/>
-              </div>
-              <div className="drivers">
+        <div className='Stand'>
+          {
+            teams.map((team, key) => (
+              <div className="teamCard" key={key}>
+                <div className="left">
+                  <h2 className={team.position>=10 && "double"}>{team.position}</h2>
+                  <img src={`/assets/team/${team.Constructor.constructorId}.png`} loading='lazy'/>
+                </div>
+                <div className="drivers">
                 {
-                
-                  drivers.map((driver, key)=>(
-                    <React.Fragment key={key}>
-                    {
-                      team.Constructor.constructorId === driver.Constructors[0].constructorId &&
-                    <div className='driver'>
-                      <h4>{driver.Driver.code}</h4>
-                      <h5>{driver.points}</h5>
-                    </div>
-                    }
-                  </React.Fragment>
+                drivers.map((driver, key)=>(
+                  <React.Fragment key={key}>
+                  {
+                    team.Constructor.constructorId === driver.Constructors[0].constructorId &&
+                  <div className='driver'>
+                    <h4>{driver.Driver.code}</h4>
+                    <h5>{driver.points}</h5>
+                  </div>
+                  }
+                </React.Fragment>
                 ))
                 }
+                </div>
+                <h3>{team.points}</h3>
               </div>
-              <h3>{team.points}</h3>
-            </div>
-          ))
-        }
-        </>
+            ))
+          }
+          
+        </div>
       }
-    </div>
+    </>
   )
 }
 

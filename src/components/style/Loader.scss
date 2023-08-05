@@ -1,12 +1,19 @@
 @import "/src/style/general.scss";
 
 .Loader {
-    display: grid;
-    place-items: center;
+    position: absolute;
+    right: 0;
+    overflow: hidden;
 
-    width: calc(100% - var(--pc));
-    height: calc(100vh - 1rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     
+    width: calc(100vw - var(--pc));
+    height: 100vh;
+
+    background: var(--cc);
+
     @media screen and (max-width: 600px) {
         width: 100%;
         height: calc(100vh - var(--bottom));

@@ -13,7 +13,7 @@
     
     padding: 1rem;
     
-    background: #111;
+    background: var(--cb2);
     
     .title {
         display: grid;
@@ -33,7 +33,7 @@
             font-weight: 700;
             font-size: 1.5em;
 
-            color: #fff;
+            color: var(--ca1);
         }
     }
 
@@ -55,7 +55,7 @@
 
             border-radius: 10px;
 
-            color: #fff;
+            color: var(--ca1);
 
             & svg {
                 font-size: 2em;
@@ -67,7 +67,7 @@
             }
         }
         & a:hover {
-            background: #222;
+            background: var(--cb1);
         }
     }
 }

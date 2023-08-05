@@ -35,10 +35,10 @@ function Next() {
   }
 
   return (
-    <div className='Next'>
+    <>
       {
         loading ? <Loader/> :
-        <>
+        <div className='Next'>
           <Round country={data.Circuit.Location.country} number={data.round}/>
 
           <div className="middle">
@@ -48,14 +48,14 @@ function Next() {
             </div>
             <div className="right">
               <div className="circuit">
-                <img className="map" src={`/assets/map/${data.Circuit.Location.country}.avif`}/>
+                <img className="map" src={`/assets/map/${data.Circuit.Location.country}.avif`} loading='lazy'/>
                 <h3>{data.Circuit.circuitName}</h3>
               </div>
             </div>
           </div>
-        </>
+        </div>
       }
-    </div>
+    </>
   )
 }
 

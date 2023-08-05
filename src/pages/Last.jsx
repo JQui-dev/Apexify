@@ -34,19 +34,19 @@ function Last() {
   }
 
   return (
-    <div className='Last'>
+    <>
       {
         loading ? <Loader/>
         : 
-        <>
+        <div className='Last'>
           <Round country={data.Circuit.Location.country} number={data.round}/>
 
           <FastestLap list={data.Results && data.Results}/>
 
           <Results list={data.Results && data.Results}/>
-        </>
+        </div>
       }
-    </div>
+    </>
   )
 }
 

@@ -12,12 +12,20 @@ function Results({list}) {
     <div className='Results'>
         {
         list.map((res, key) => (
-            <div className={`card ${res.FastestLap && res.FastestLap.rank === "1" ? "fastest" : ""}`} key={key}>
-                <h2 className='pos'>{res.position}</h2>
+            <div className={`card ${res.FastestLap && res.FastestLap.rank === "1" && "fastest"}`} key={key}>
+                <div className='pos'>
+                    <h2>{res.position}</h2>
+                    {
+                        res.position === "1" ? "st" :
+                            res.position === "2" ? "nd" :
+                                res.position === "3" ? "rd" :
+                        "th"
+                    }
+                </div>
                 <div className="left">
                     <div className="images">
-                        <img className='driverImg' src={`/assets/driver/${res.Driver.code}.png`}/>
-                        <img className='teamImg' src={`/assets/team/${res.Constructor.constructorId}.png`}/>
+                        <img className="driverImg" src={`/assets/driver/${res.Driver.code}.png`} loading='lazy'/>
+                        <img className='teamImg' src={`/assets/team/${res.Constructor.constructorId}.png`} loading='lazy'/>
                     </div>
                     <div className='name'>
                         <h4>{res.number}</h4>

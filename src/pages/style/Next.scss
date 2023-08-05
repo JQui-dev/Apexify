@@ -40,10 +40,10 @@
                     width: calc(100vw - 1rem);
                 }
         
-                border-radius: .75rem;
+                border-radius: var(--rounded);
         
-                color: #000;
-                background: #fff;
+                color: var(--ca1);
+                background: var(--ca1);
         
                 .map {
                     width: 100%;
@@ -58,8 +58,8 @@
                     text-align: center;
                     font-weight: 500;
         
-                    color: #fff;
-                    background: #111;
+                    color: var(--ca);
+                    background: var(--c1);
                 }
             }
         }

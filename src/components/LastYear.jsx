@@ -5,7 +5,6 @@ import React, { useState, useEffect } from 'react';
 import Winner from './Winner';
 
 // STYLE
-import './style/LastYear.scss'
 
 function LastYear({circuit}) {
 

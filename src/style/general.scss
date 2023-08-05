@@ -1,9 +1,27 @@
 :root {
+    // Info screen measures
     --pc: 9.5rem;
-
     --bottom: 4rem;
+
+    // Components constants
+    --rounded: .75rem;
+
+    // Colors
+    --c1: #800;
+    --c2: #a00;
+    
+    --ca1: #fff;
+    --ca2: #bbb;
+
+    --cb1: #000;
+    --cb2: #111;
+    --cb3: #666;
+
+    --cfast: #80a;
 }
 
+
+// Info screen
 @mixin fix-nav-pos {
     position: relative;
     
@@ -14,8 +32,8 @@
     
     padding: .5rem; 
 
-    background: #111;
     color: #fff;
+    background: #111;
 
     @media screen and (max-width: 600px) {
         min-height: calc(100svh - var(--bottom));
