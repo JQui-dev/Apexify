@@ -23,6 +23,7 @@ function Stand() {
       const fetched = await fetch("https://ergast.com/api/f1/current/constructorStandings.json")
       if(fetched.ok) {
         const res = await fetched.json()
+        console.log(res.MRData.StandingsTable.StandingsLists[0].ConstructorStandings)
         setTeams(res.MRData.StandingsTable.StandingsLists[0].ConstructorStandings)
         setLoading(false)
       }
@@ -51,31 +52,33 @@ function Stand() {
         <div className='Stand'>
           {
             teams.map((team, key) => (
-              <div className="teamCard" key={key}>
-                <div className="left">
-                  <h2 className={team.position>=10 && "double"}>{team.position}</h2>
-                  <img src={`/assets/team/${team.Constructor.constructorId}.png`} loading='lazy'/>
+              <section className="teams" key={key}>
+                <div className="pos">
+                  <h2>{team.position}</h2>
+                  <h3>{team.points}</h3>
+                </div>
+                <div className="team">
+                  <h2>{team.Constructor.name}</h2>
+                  <img src={`/assets/team/${team.Constructor.constructorId}.png`}/>
                 </div>
                 <div className="drivers">
                 {
-                drivers.map((driver, key)=>(
-                  <React.Fragment key={key}>
-                  {
-                    team.Constructor.constructorId === driver.Constructors[0].constructorId &&
-                  <div className='driver'>
-                    <h4>{driver.Driver.code}</h4>
-                    <h5>{driver.points}</h5>
-                  </div>
-                  }
-                </React.Fragment>
-                ))
+                  drivers.map((driver, key) => (
+                    driver.Constructors[0].constructorId == team.Constructor.constructorId &&
+                    <div className="driver" key={key}>
+                      <h2>{driver.Driver.givenName} {driver.Driver.familyName}</h2>
+                      <img src={`/assets/driver/${driver.Driver.code}.png`}/>
+                    </div>
+                  ))
                 }
                 </div>
-                <h3>{team.points}</h3>
-              </div>
+                <div className="car">
+                  <img src={`assets/team/car/${team.Constructor.constructorId}.avif`}/>
+
+                </div>
+              </section>
             ))
           }
-          
         </div>
       }
     </>

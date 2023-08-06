@@ -5,7 +5,7 @@
     grid-template-columns: repeat(2, 1fr);
     gap: .5rem;
 
-    @media screen and (min-width: 1000px) {
+    @media screen and (min-width: 850px) {
         .card:nth-child(even) {
             margin-top: 2.5rem;
         }
@@ -52,15 +52,20 @@
             right: .75rem;
 
             display: flex;
+            align-items: flex-start;
+
             gap: 1px;
 
             color: var(--cb3);
 
             & h2 {
-                font-size: 3.5rem;
-                line-height: 3rem;
+                font-size: 3rem;
+                line-height: 2.25rem;
             }
-            & h3 {}
+            & h3 {
+                font-size: 1.5rem;
+                line-height: .75rem;
+            }
         }
         
         .left {
@@ -111,11 +116,11 @@
 
                     padding: .4rem;
 
-                    box-shadow: .5px .5px 7.5px #fff;
+                    box-shadow: .5px .5px 7.5px var(--ca1);
 
                     border-radius: .75rem;
 
-                    background: #000;
+                    background: var(--cb1);
                 }
             }
 
@@ -182,15 +187,19 @@
         .right {
             
             .points {
-                color: #80a;
+                color: var(--cfast);
             }
         }
     }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 850px) {
     .Results {
         grid-template-columns: repeat(1, 1fr);
+
+        .card {
+            animation-range: entry 40% cover 45%;
+        }
     }   
 }
 
@@ -200,8 +209,17 @@
         border-radius: .75rem;
 
         .pos {
-            line-height: 2.5rem;
-            font-size: 2.75rem;
+            top: .25rem;
+            right: .5rem;
+
+            & h2 {
+                font-size: 2.25rem;
+                line-height: 2rem;
+            }
+            & h3 {
+                font-size: .5rem;
+                line-height: .25rem;
+            }
         }
         
         .left {
