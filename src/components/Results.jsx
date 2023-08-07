@@ -12,7 +12,8 @@ function Results({list}) {
     <div className='Results'>
         {
         list.map((res, key) => (
-            <div className={`card ${res.FastestLap && res.FastestLap.rank === "1" && "fastest"}`} key={key}>
+            <div className={`card ${res.FastestLap && res.FastestLap.rank === "1" && "fastest"}
+            ${res.status !== "Finished" && "dnfColors"}`} key={key}>
                 <div className='pos'>
                     <h2>{res.position}</h2>
                     {

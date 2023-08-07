@@ -1,5 +1,6 @@
 // MODULES
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 // COMPONENTS
 import Loader from "./../components/Loader"
@@ -74,7 +75,6 @@ function Stand() {
                 </div>
                 <div className="car">
                   <img src={`assets/team/car/${team.Constructor.constructorId}.avif`}/>
-
                 </div>
               </section>
             ))

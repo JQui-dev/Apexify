@@ -28,8 +28,10 @@
 
         background: var(--cb1);
 
-        .pos, .team, .drivers > .driver {
+        .team, .drivers > .driver {
             overflow: hidden;
+            position: relative;
+            z-index: 1;
 
             display: flex;
             align-items: center;
@@ -45,8 +47,8 @@
             background: var(--cb1);
 
             & img {
-                padding: .2rem;
-                padding-bottom: 0;
+                padding: .4rem;
+                padding-bottom: .1rem;
 
                 width: 4rem;
                 aspect-ratio: 1;
@@ -56,11 +58,36 @@
 
                 background: var(--c1);
             }
+
+            &::before {
+                background: var(--c1);
+                content: "";
+                inset: 0;
+                position: absolute;
+                transform: scaleX(0);
+                transform-origin: right;
+                transition: transform 0.5s ease-in-out;
+                z-index: -1;
+            }
+
+            &:hover {
+                &::before {
+                    transform: scaleX(1);
+                    transform-origin: left;
+                }
+    
+                & img {
+                    background: var(--c2);
+                }
+            }
         }
 
         .pos {
-            border-bottom: none;
-            border-right: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            border-radius: var(--rounded);
 
             padding: .5rem;
 
@@ -110,6 +137,7 @@
         }
     }
 
+
     .car {
         display: grid;
         place-items: center;
@@ -124,6 +152,13 @@
             width: 80%;
             aspect-ratio: 3;
             object-fit: contain;
+            transition: scale 150ms ease-in-out;
+        }
+
+        &:hover {
+            & img {
+                scale: 1.1;
+            }
         }
     }
     }
