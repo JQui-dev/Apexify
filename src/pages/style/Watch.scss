@@ -2,4 +2,66 @@
 
 .Watch {
     @include fix-nav-pos;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    min-height: 100svh;
+
+    & h2 {
+        padding: 1rem;
+
+        font-weight: 800;
+
+        color: var(--cb1);
+        background: var(--ca1);
+
+        border-top-left-radius: var(--rounded);
+        border-top-right-radius: var(--rounded);
+    }
+
+    & section {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+
+        padding: 1rem;
+        gap: 1rem;
+
+        min-height: 70svh;
+
+        border-bottom-left-radius: var(--rounded);
+        border-bottom-right-radius: var(--rounded);
+
+        background: var(--cb1);
+
+        & a {
+            display: grid;
+            place-items: center;
+
+            width: 300px;
+
+            padding: 2rem;
+
+            border-radius: var(--rounded);
+            
+            box-shadow: inset 5px 5px 10px #000a;
+
+            background-color: var(--cb2);
+
+            transition: background-color 200ms ease-in-out;
+
+            & img {
+                width: 50%;
+                aspect-ratio: 1;
+
+                object-fit: contain;
+            }
+        }
+        & a:hover {
+            background-color: var(--c1);
+        }
+    }
 }
