@@ -27,14 +27,13 @@ function NavBar() {
           <h3>Last</h3>
         </NavLink>
 
+        <NavLink to="/" className="main">
+          <img src="/logo.png"/>
+        </NavLink>
+        
         <NavLink to="/stand">
           <AiOutlineFolder/>  
           <h3>Stand</h3>
-        </NavLink>
-
-        <NavLink to="/watch">
-          <AiOutlineEye/>
-          <h3>Watch</h3>
         </NavLink>
 
         <NavLink to="/profile">

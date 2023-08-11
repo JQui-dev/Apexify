@@ -28,24 +28,6 @@
         color: var(--ca1);
         background: var(--cb1);
 
-        view-timeline-name: --card;
-        view-timeline-axis: block;
-
-        animation-timeline: --card;
-        animation-name: show;
-
-        animation-range: entry 25% cover 30%;
-        animation-fill-mode: both;
-
-        @keyframes show {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
         .pos {
             position: absolute;
             top: .5rem;
