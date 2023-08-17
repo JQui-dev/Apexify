@@ -6,12 +6,10 @@
     display: grid;
     grid-template-columns: repeat(2, 50%);
 
-    @media screen and (max-width: 913px) {
-        display: flex;
-        flex-direction: column;
-    }
-
     gap: .5rem;
+
+    overflow: hidden;
+    max-height: 100svh;
 
     .myProfile {
         display: flex;
@@ -153,6 +151,7 @@
     }
 
     .multiScreen {
+        overflow-y: auto;
         background: var(--cb2);
         padding: .25rem;
 
@@ -161,8 +160,6 @@
             flex-direction: column;
             
             gap: .5rem;
-
-            overflow-y: auto;
 
             .wrap {
                 overflow: hidden;
@@ -231,6 +228,17 @@
                     }
                 }
             }
+        }
+    }
+
+    @media screen and (max-width: 913px) {
+        display: flex;
+        flex-direction: column;
+        overflow: auto;
+        max-height: none;
+
+        .multiScreen {
+            overflow-y: hidden;
         }
     }
 }
