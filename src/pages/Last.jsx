@@ -1,28 +1,30 @@
+/* eslint-disable multiline-ternary */
 // MODULES
 import { useState, useEffect } from 'react'
 
 // COMPONENTS
-import Loader from '../components/Loader';
-import Round from '../components/Round';
-import FastestLap from '../components/FastestLap';
-import Results from '../components/Results';
+import Loader from '../components/Loader'
+import Round from '../components/Round'
+import FastestLap from '../components/FastestLap'
+import Results from '../components/Results'
 
 // STYLE
 import './style/Last.scss'
 
-function Last() {
+function Last () {
+  const [loading, setLoading] = useState(true)
+  const [data, setData] = useState()
 
-  const [ loading, setLoading ] = useState(true);
-  const [ data, setData ] = useState()
-
-  useEffect(()=>{
-    fetchLast();
+  useEffect(() => {
+    fetchLast()
   }, [])
 
   const fetchLast = async () => {
     try {
-      const fetched = await fetch("https://ergast.com/api/f1/current/last/results.json")
-      if(fetched.ok) {
+      const fetched = await fetch(
+        'https://ergast.com/api/f1/current/last/results.json'
+      )
+      if (fetched.ok) {
         const res = await fetched.json()
         console.log(res.MRData.RaceTable.Races[0])
         setData(res.MRData.RaceTable.Races[0])
@@ -35,17 +37,17 @@ function Last() {
 
   return (
     <>
-      {
-        loading ? <Loader/>
-        : 
+      {loading ? (
+        <Loader />
+      ) : (
         <div className='Last'>
-          <Round country={data.Circuit.Location.country} number={data.round}/>
+          <Round country={data.Circuit.Location.country} number={data.round} />
 
-          <FastestLap list={data.Results && data.Results}/>
+          <FastestLap list={data.Results && data.Results} />
 
-          <Results list={data.Results && data.Results}/>
+          <Results list={data.Results && data.Results} />
         </div>
-      }
+      )}
     </>
   )
 }

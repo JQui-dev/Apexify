@@ -1,35 +1,35 @@
 // MODULES
-import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 // PAGES
-import Land from "./pages/Land"
-import Error from "./pages/Error"
-  import Next from "./pages/Next"
-  import Last from "./pages/Last"
-  import Stand from "./pages/Stand"
-  import Profile from "./pages/Profile"
-  import Login from "./pages/Login"
+import Land from './pages/Land'
+import Error from './pages/Error'
+import Next from './pages/Next'
+import Last from './pages/Last'
+import Stand from './pages/Stand'
+import Profile from './pages/Profile'
+import Login from './pages/Login'
 
 // COMPONENTS
-import NavBar from "./components/NavBar"
+import NavBar from './components/NavBar'
 
 // STYLE
 import './style/App.scss'
 
-function App() {
+function App () {
   return (
-    <div className="App">
+    <div className='App'>
       <BrowserRouter>
-        <NavBar/>
+        <NavBar />
         <Routes>
-          <Route path="/" element={<Land/>}></Route>
-          <Route path="*" element={<Error/>}></Route>
+          <Route path='/' element={<Land />} />
+          <Route path='*' element={<Error />} />
 
-          <Route path="/next" element={<Next/>}></Route>
-          <Route path="/last" element={<Last/>}></Route>
-          <Route path="/stand" element={<Stand/>}></Route>
-          <Route path="/profile" element={<Profile/>}></Route>
-          <Route path="/login" element={<Login/>}></Route>
+          <Route path='/next' element={<Next />} />
+          <Route path='/last' element={<Last />} />
+          <Route path='/stand' element={<Stand />} />
+          <Route path='/profile' element={<Profile />} />
+          <Route path='/login' element={<Login />} />
         </Routes>
       </BrowserRouter>
     </div>
