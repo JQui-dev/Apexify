@@ -1,67 +1,35 @@
+/* eslint-disable multiline-ternary */
+
 // MODULES
-import { useState, useEffect } from 'react'
+
+// HOOKS
+import { useNext } from '../hooks/useNext'
 
 // COMPONENTS
 import Loader from './../components/Loader'
 import Round from '../components/Round'
 import CDown from '../components/CDown'
 import LastYear from '../components/LastYear'
+import Map from '../components/Map'
 
 // STYLE
 import './style/Next.scss'
 
 function Next () {
-  const [loading, setLoading] = useState(true)
-  const [data, setData] = useState({})
+  const { loading, data } = useNext({
+    link: 'current/next'
+  })
 
-  useEffect(() => {
-    fetchNext()
-  }, [])
-
-  const fetchNext = async () => {
-    try {
-      const fetched = await fetch('https://ergast.com/api/f1/current/next.json')
-      if (fetched.ok) {
-        const res = await fetched.json()
-        console.log(res.MRData.RaceTable.Races[0])
-        setData(res.MRData.RaceTable.Races[0])
-        setLoading(false)
-      }
-    } catch (error) {
-      console.error(error)
-      setLoading(false)
-    }
-  }
+  if (loading) return <Loader />
 
   return (
-    <>
-      {loading
-        ? (
-          <Loader />
-          )
-        : (
-          <div className='Next'>
-            <Round country={data.Circuit.Location.country} number={data.round} />
+    <section className='Next'>
+      <Round country={data.country} number={data.round} />
 
-            <div className='middle'>
-              <div className='left'>
-                <CDown what='Race' date={data.date} time={data.time} />
-                <LastYear circuit={data.Circuit && data.Circuit.circuitId} />
-              </div>
-              <div className='right'>
-                <div className='circuit'>
-                  <img
-                    className='map'
-                    src={`/assets/map/${data.Circuit.circuitId}.avif`}
-                    loading='lazy'
-                  />
-                  <h3>{data.Circuit.circuitName}</h3>
-                </div>
-              </div>
-            </div>
-          </div>
-          )}
-    </>
+      <CDown what='Race' date={data.date} time={data.time} />
+      <LastYear circuit={data.cID} />
+      <Map name={data.cName} id={data.cID} />
+    </section>
   )
 }
 

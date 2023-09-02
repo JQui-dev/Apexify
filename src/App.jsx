@@ -8,7 +8,6 @@ import Next from './pages/Next'
 import Last from './pages/Last'
 import Stand from './pages/Stand'
 import Profile from './pages/Profile'
-import Login from './pages/Login'
 
 // COMPONENTS
 import NavBar from './components/NavBar'
@@ -29,7 +28,6 @@ function App () {
           <Route path='/last' element={<Last />} />
           <Route path='/stand' element={<Stand />} />
           <Route path='/profile' element={<Profile />} />
-          <Route path='/login' element={<Login />} />
         </Routes>
       </BrowserRouter>
     </div>

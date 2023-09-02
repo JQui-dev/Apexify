@@ -36,8 +36,9 @@
         font-weight: 600;
 
         letter-spacing: .1rem;
-        
-        background: var(--cb2);
+
+        color: var(--c1);
+        background: #eee;
     }
     
     .counter {
@@ -55,7 +56,8 @@
 
             padding: .5rem;
 
-            background: var(--c2);
+            color: #000;
+            background: #eee;
 
             & h3 {
                 display: grid;
