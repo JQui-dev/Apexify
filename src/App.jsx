@@ -22,6 +22,7 @@ function App () {
             <Route path='*' element={<Error />} />
           </Routes>
         </div>
+        <div className='navMobile' />
       </BrowserRouter>
     </div>
   )
