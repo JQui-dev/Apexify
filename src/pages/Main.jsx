@@ -5,15 +5,18 @@ import './Main.scss'
 function Main () {
   return (
     <div className='Main'>
-      {/* Div just avoid the gap */}
-      <div>
+      <section className='tCard'>
         <h1>GP TRACKER</h1>
-        <h2>Follow your favorite drivers and teams</h2>
-      </div>
+        <img src='/car.png' alt='car' />
+      </section>
 
-      <Link to='/'>Coming Race</Link>
+      <h2>The best content of F1</h2>
 
-      <img src='/car.png' alt='car' />
+      <section className='links'>
+        <Link to='/calendar'>Calendar</Link>
+        <Link to='/standing'>Standing</Link>
+        <Link to='/results'>Results</Link>
+      </section>
     </div>
   )
 }
