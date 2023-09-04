@@ -1,0 +1,75 @@
+.Races {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+    
+    gap: .5rem;
+
+    .race {
+        overflow: hidden;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        min-height: 240px;
+
+        border-radius: .25rem;
+
+        background: #ddd;
+
+        .main {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: .25rem;
+            padding: .5rem .5rem;
+
+            & h2 { font-weight: 900; }
+            & h3 { font-size: 1rem; }
+            & h4 { display: none; }
+        }
+        .big {
+            flex-direction: column;
+
+            & h2 {
+                font-size: 2.5rem;
+                line-height: 2rem;
+            }
+            & h3 {}
+            & h4 { display: block; }
+        }
+
+        .sessions {
+            display: none;
+
+            .session {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                padding: .25rem .5rem;
+
+                background: #bbb;
+                
+                &:nth-child(odd) {
+                    background: #ccc;
+                }
+
+                & h4 { font-weight: 800; }
+
+                & aside {
+                    display: grid;
+                    place-items: center;
+
+                    & h5 {}
+                    & h6 { font-weight: 400; }
+                }
+            }
+        }
+        .visible {
+            display: flex;
+            flex-direction: column-reverse;
+        }
+    }
+}

@@ -6,6 +6,10 @@
     overflow: hidden;
     height: 100svh;
 
+    background-image: repeating-linear-gradient(45deg, #a00 0, #a00 0.5px, transparent 0, transparent 50%);
+    background-size: 300px 300px;
+    background-color: #eee;
+
     & nav {
         display: flex;
         flex-direction: column;
