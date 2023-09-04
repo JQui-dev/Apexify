@@ -12,7 +12,11 @@ function Calendar () {
 
   const handleSubmit = e => {
     e.preventDefault()
-    setYear(e.target[0].value)
+    const newYear = e.target[0].value
+    const intYear = parseInt(newYear)
+    if (intYear >= 1950 && intYear <= 2023) {
+      setYear(newYear)
+    }
     e.target[0].value = ''
   }
 
