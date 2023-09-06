@@ -1,26 +1,21 @@
 import React from 'react'
 
-import useVisibleItem from '../hooks/useVisibleItem'
-
 import './Races.scss'
 
 function Races ({ races }) {
-  const { visible, handleInfo } = useVisibleItem({ races })
-
   return (
     <div className='Races'>
       {races.map(race => (
         <div
           className='race'
           key={race.cID}
-          onClick={() => handleInfo(race.cID)}
         >
-          <section className={`main ${!visible[race.cID] && 'big'}`}>
+          <section className='main'>
             <h2>{race.round}</h2>
             <h3>{race.name}</h3>
           </section>
 
-          <section className={`sessions ${visible[race.cID] && 'visible'}`}>
+          <section className='sessions'>
             {race?.sessions?.map(ses => (
               <React.Fragment key={`${race.cID}_${ses.type}`}>
                 {ses.date && (

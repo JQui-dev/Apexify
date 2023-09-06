@@ -2,15 +2,18 @@ import { useEffect, useState } from 'react'
 
 import { fetchAny } from './../services/fetchAny'
 
-export function useCalendar ({ year }) {
+export function useCalendar () {
+  const [loading, setLoading] = useState(true)
   const [races, setRaces] = useState([])
 
   useEffect(() => {
-    fetchCalendar({ year })
-  }, [year])
+    fetchCalendar({ year: 'current' })
+  }, [])
 
   const fetchCalendar = async ({ year }) => {
     try {
+      setLoading(true)
+      setRaces([]) // Reset to avoid overwrites
       const res = await fetchAny({ param: year })
       const newRaces = await res.RaceTable.Races
       const mappedRaces = await newRaces.map(race => {
@@ -69,11 +72,13 @@ export function useCalendar ({ year }) {
           sessions: validSessionData
         }
       })
+      setLoading(false)
       setRaces(mappedRaces)
     } catch (error) {
+      setLoading(false)
       console.error('Error: ', error)
     }
   }
 
-  return { races }
+  return { races, fetchCalendar, loading }
 }

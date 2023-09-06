@@ -3,7 +3,6 @@
     flex-direction: column;
 
     gap: 1rem;
-    padding: .75rem;
     
     & h1 {
         font-size: 3rem;
@@ -28,6 +27,8 @@
 
             border-top-right-radius: .5rem;
             border-bottom-right-radius: .5rem;
+
+            font-weight: 600;
 
             color: #fff;
             background: #000;

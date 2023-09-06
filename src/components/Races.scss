@@ -1,6 +1,6 @@
 .Races {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     
     gap: .5rem;
 
@@ -9,13 +9,12 @@
 
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-evenly;
 
-        min-height: 240px;
-
+        border: 2.5px solid #222;
         border-radius: .25rem;
 
-        background: #ddd;
+        background: #000;
 
         .main {
             display: flex;
@@ -23,25 +22,19 @@
             justify-content: space-between;
 
             gap: .25rem;
-            padding: .5rem .5rem;
+            padding: .5rem .75rem;
 
-            & h2 { font-weight: 900; }
-            & h3 { font-size: 1rem; }
-            & h4 { display: none; }
-        }
-        .big {
-            flex-direction: column;
+            color: #fff;
 
-            & h2 {
-                font-size: 2.5rem;
-                line-height: 2rem;
-            }
-            & h3 {}
-            & h4 { display: block; }
+            // Round number
+            & h2 { font-weight: 100; }
+            // Race title
+            & h3 { font-size: .9rem; }
         }
 
         .sessions {
-            display: none;
+            display: flex;
+            flex-direction: column-reverse;
 
             .session {
                 display: flex;
@@ -50,7 +43,8 @@
 
                 padding: .25rem .5rem;
 
-                background: #bbb;
+                color: #000;
+                background: #ddd;
                 
                 &:nth-child(odd) {
                     background: #ccc;
@@ -66,10 +60,6 @@
                     & h6 { font-weight: 400; }
                 }
             }
-        }
-        .visible {
-            display: flex;
-            flex-direction: column-reverse;
         }
     }
 }
