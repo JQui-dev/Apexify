@@ -19,7 +19,7 @@ function NavBar () {
       </section>
 
       <NavLink to='/'>
-        <img src='./logo.png' alt='logo' />
+        <img src='/logo.png' alt='logo' />
       </NavLink>
     </nav>
   )

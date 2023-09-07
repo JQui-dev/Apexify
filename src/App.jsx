@@ -6,6 +6,7 @@ import Main from './pages/Main'
 import Error from './pages/Error'
 
 import Calendar from './pages/Calendar'
+import Race from './pages/Race'
 
 // COMPONENTS
 import NavBar from './components/NavBar'
@@ -24,6 +25,7 @@ function App () {
             <Route path='*' element={<Error />} />
 
             <Route path='/calendar' element={<Calendar />} />
+            <Route path='r/:year/:round' element={<Race />} />
           </Routes>
         </div>
         <div className='navMobile' />

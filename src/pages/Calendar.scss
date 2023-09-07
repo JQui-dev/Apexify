@@ -37,7 +37,7 @@
         overflow: hidden;
         border-radius: .5rem;
 
-        @media (width <= 425px) {
+        @media (width <= 450px) {
             & input, button {
                 width: 100%;
                 border-radius: 0;

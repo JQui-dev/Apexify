@@ -1,0 +1,53 @@
+.Results {
+    font-size: 14px;
+    @media (max-width: 500px) {
+        font-size: 8px;
+    }
+    @media (max-width: 310px) {
+        font-size: 6.5px;
+    }
+    overflow: hidden;
+
+    border-radius: .25rem;
+
+    .driver {
+        display: grid;
+        place-items: center;
+        grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+
+        gap: 1rem;
+        padding: .75rem;
+
+        &:nth-child(even) { background: #222; }
+        &:nth-child(odd) { background: #333; }
+        
+        .name {
+            display: flex;
+            align-items: center;
+
+            width: 100%;
+
+            gap: .5rem;
+
+            .pos {
+                display: grid;
+                place-items: center;
+                
+                width: 2rem;
+
+                font-weight: 300;
+            }
+            .name {
+                font-weight: 600;
+            }
+        }
+        & h4 {
+            width: 5rem;
+            text-align: center;
+            font-weight: 500;
+        }
+        & h5 { 
+            text-align: end; 
+            font-weight: 800; }
+    }
+}

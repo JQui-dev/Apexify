@@ -15,7 +15,7 @@ export function useCalendar () {
       setLoading(true)
       setRaces([]) // Reset to avoid overwrites
       const res = await fetchAny({ param: year })
-      const newRaces = await res.RaceTable.Races
+      const newRaces = await res.Races
       const mappedRaces = await newRaces.map(race => {
         const sessionData = [
           {

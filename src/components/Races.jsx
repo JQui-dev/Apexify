@@ -1,15 +1,14 @@
 import React from 'react'
 
+import { Link } from 'react-router-dom'
+
 import './Races.scss'
 
 function Races ({ races }) {
   return (
     <div className='Races'>
       {races.map(race => (
-        <div
-          className='race'
-          key={race.cID}
-        >
+        <Link to={`/r/${race.season}/${race.round}`} className='race' key={race.cID}>
           <section className='main'>
             <h2>{race.round}</h2>
             <h3>{race.name}</h3>
@@ -30,7 +29,7 @@ function Races ({ races }) {
               </React.Fragment>
             ))}
           </section>
-        </div>
+        </Link>
       ))}
     </div>
   )

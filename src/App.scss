@@ -76,7 +76,7 @@
 }
 
 // MOBILE -> NavBar displayed at the bottom
-@media (width <= 425px) {
+@media (width <= 450px) {
     .App {
         display: flex;
         flex-direction: column;
