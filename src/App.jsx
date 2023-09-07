@@ -27,8 +27,8 @@ function App () {
             <Route path='/calendar' element={<Calendar />} />
             <Route path='r/:year/:round' element={<Race />} />
           </Routes>
+          <div className='navMobile' />
         </div>
-        <div className='navMobile' />
       </BrowserRouter>
     </div>
   )

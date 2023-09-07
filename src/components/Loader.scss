@@ -4,7 +4,7 @@
 
     width: 100%;
     height: 100%;
-    @media (max-width: 450px) { height: 100svh; }
+    @media (max-width: 450px) { height: calc(100svh - 4rem); }
 
     .lines {
         display: flex;

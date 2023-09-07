@@ -62,8 +62,8 @@
     .screen {
         overflow-y: auto;
         padding: .75rem;
+        .navMobile { display: none; }
     }
-    .navMobile { display: none; }
 }
 
 // Animations
@@ -97,11 +97,12 @@
         }
     
         // Info screen
-        .screen { /* */ }
-        .navMobile {
-            display: block;
-            width: 100%;
-            height: 4rem;
+        .screen { 
+            .navMobile {
+                display: block;
+                width: 100%;
+                height: 4rem;
+            }
         }
     }
 }

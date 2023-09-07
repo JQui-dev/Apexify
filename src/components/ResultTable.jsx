@@ -8,7 +8,7 @@ function ResultTable ({ results }) {
         <div className='driver' key={key}>
           <div className='name'>
             <h3 className='pos'>{driver.position}</h3>
-            <h3 className='name'>{driver.givenName} {driver.familyName}</h3>
+            <h3 className='driverName'>{(driver?.givenName)?.charAt(0)}. {driver.familyName}</h3>
           </div>
           <h4>
             {driver.status === 'Finished'
