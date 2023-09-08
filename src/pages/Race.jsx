@@ -1,5 +1,7 @@
 import { useParams } from 'react-router-dom'
 
+import { FaLocationDot } from 'react-icons/fa6'
+
 import Loader from './../components/Loader'
 import { useResults } from '../hooks/useResults'
 import ResultTable from '../components/ResultTable'
@@ -16,9 +18,18 @@ function Race () {
 
   return (
     <div className='Race'>
-      <h1>{year}</h1>
-      <h2>{round}</h2>
-      <h3>{race.name}</h3>
+      <main>
+        <div className='info'>
+          <h1>{year}</h1>
+          <h2>Round {round}</h2>
+          <h3>{race.name}</h3>
+          <h4>
+            <FaLocationDot />
+            {race.circuitLocation}
+          </h4>
+        </div>
+        <img src={`/assets/map/${race.circuitID}.avif`} alt='' />
+      </main>
       <ResultTable results={race.results} />
     </div>
   )

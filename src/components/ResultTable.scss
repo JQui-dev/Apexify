@@ -1,20 +1,39 @@
 .Results {
     overflow: hidden;
 
-    border-radius: .25rem;
+    border: 2px solid #222;
+    border-radius: .5rem;
+
+    .titles {
+        display: grid;
+        place-items: center;
+        grid-template-columns: repeat(3, 1fr);
+
+        padding: .75rem 1rem;
+
+        background: #000;
+
+        :nth-child(1) {
+            width: 100%;
+            text-align: start;
+        }
+    }
 
     .driver {
-        display: flex;
-        flex-wrap: wrap;
+        display: grid;
+        place-items: center;
+
+        grid-template-columns: repeat(3, 1fr);
 
         gap: 1rem;
         padding: 1rem .75rem;
 
-        &:nth-child(even) { background: #222; }
-        &:nth-child(odd) { background: #333; }
+        color: #000;
+        &:nth-child(even) { background: #ddd; }
+        &:nth-child(odd) { background: #ccc; }
         
         .name {
-            flex: 2;
+            overflow: hidden;
 
             display: flex;
             align-items: center;
@@ -31,7 +50,34 @@
 
                 font-weight: 300;
             }
-            .driverName { 
+            .driverNameMobile { display: none; }
+        }
+        .constructor {
+            display: grid;
+            place-items: center;
+        }
+        .time {
+            display: grid;
+            place-items: center;
+
+            width: 5rem;
+            font-weight: 500;
+        }
+    }
+
+    // Two Columns in mobile
+    @media (max-width: 600px) { 
+    .titles, .driver {
+        grid-template-columns: repeat(2, 1fr); 
+            
+        .teamTitle, .driverName {
+            display: none;
+            }
+        }
+        .driver {
+            .name {
+            .driverNameMobile {
+                display: block;
                 font-weight: 600;
                 max-width: 125px;
                 white-space: nowrap;
@@ -39,17 +85,7 @@
                 text-overflow: ellipsis;
             }
         }
-        & h4 {
-            flex: 1;
-            width: 5rem;
-            font-weight: 500;
-        }
-        & h5 { 
-            font-weight: 800; }
-        }
-        @media (max-width: 375px) {
-            .name {
-                overflow: hidden;
-            }
-        }
+        .constructor { display: none; }
+    }
+    }
 }

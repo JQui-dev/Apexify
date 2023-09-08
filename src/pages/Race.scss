@@ -1,15 +1,86 @@
 .Race {
-    
     & main {
-
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        place-items: center;
+        grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+        
+        padding: 2rem;
+        gap: 2rem;
 
-        & div {
-
-            & img {
-                width: 100%;
+        
+        .info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            
+            padding: 1rem 0;
+            gap: .5rem;
+            
+            & h1 {
+                font-size: 7rem;
+                line-height: 4.25rem;
+                font-weight: 900;
+            }
+            & h2 {
+                font-size: 4.75rem;
+                line-height: 3.75rem;
+                font-weight: 700;
+                color: #a00;
+            }
+            & h3 {
+                font-size: 1.55rem;
+                font-weight: 800;
+            }
+            & h4 {
+                display: flex;
+                align-items: center;
+                gap: .25rem;
+    
+                font-size: 1rem;
+                line-height: .5rem;
+                font-weight: 300;
+    
+                color: #aaa;
+    
+                & svg {
+                    filter: drop-shadow(-1px 1px 2px #fff);
+                    color: #a00;
+                }
             }
         }
+        
+        & img {
+            z-index: 1;
+            width: 100%;
+            max-height: 240px;
+            object-fit: contain;
+        }
+
+        @media (max-width: 340px) {
+            padding: 2rem 0;
+
+            .info {
+                padding: 0;
+                gap: .25rem;
+                
+                & h1 {
+                    font-size: 4rem;
+                    line-height: 3rem;
+                }
+                & h2 {
+                    font-size: 3rem;
+                    line-height: 2.5rem;
+                }
+                & h3 { font-size: 1rem; }
+                & h4 {
+                    font-size: .75rem;
+                    line-height: .45rem;
+                }
+            }
+            & img { width: 75%; }
+        }
     }
+
+    // Result Table
 }
