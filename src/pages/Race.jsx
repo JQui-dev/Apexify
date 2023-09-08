@@ -14,7 +14,7 @@ function Race () {
 
   if (loading) return <Loader what='Race' />
 
-  if (error) return <h2>Not raced yet</h2>
+  if (error) return <h2>Not Raced yet</h2>
 
   return (
     <div className='Race'>
@@ -28,7 +28,9 @@ function Race () {
             {race.circuitLocation}
           </h4>
         </div>
-        <img src={`/assets/map/${race.circuitID}.avif`} alt='' />
+        {race.current && (
+          <img src={`/assets/map/${race.circuitID}.avif`} alt='' />
+        )}
       </main>
       <ResultTable results={race.results} />
     </div>

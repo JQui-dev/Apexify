@@ -21,7 +21,9 @@ export function useResults ({ year, round }) {
         setError(true)
         return setLoading(false)
       }
+      const currentYear = new Date().getFullYear().toString()
       const newData = {
+        current: dataPath?.season === currentYear && true,
         name: dataPath?.raceName,
         circuit: dataPath?.Circuit?.circuitName,
         circuitID: dataPath?.Circuit?.circuitId,
