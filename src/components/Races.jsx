@@ -4,11 +4,17 @@ import { Link } from 'react-router-dom'
 
 import './Races.scss'
 
-function Races ({ races }) {
+function Races ({ races, next }) {
   return (
     <div className='Races'>
       {races.map(race => (
-        <Link to={`/r/${race.season}/${race.round}`} className='race' key={race.cID}>
+        <Link
+          to={`/r/${race.season}/${race.round}`}
+          className={`race ${
+            next.round === race.round && next.season === race.season && 'next'
+          }`}
+          key={race.cID}
+        >
           <section className='main'>
             <h2>{race.round}</h2>
             <h3>{race.name}</h3>

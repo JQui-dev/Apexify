@@ -6,6 +6,8 @@ import Loader from './../components/Loader'
 import { useResults } from '../hooks/useResults'
 import ResultTable from '../components/ResultTable'
 
+import NotRacedYet from './NotRacedYet.jsx'
+
 import './Race.scss'
 
 function Race () {
@@ -14,7 +16,7 @@ function Race () {
 
   if (loading) return <Loader what='Race' />
 
-  if (error) return <h2>Not Raced yet</h2>
+  if (error) return <NotRacedYet year={year} round={round} />
 
   return (
     <div className='Race'>
@@ -28,9 +30,12 @@ function Race () {
             {race.circuitLocation}
           </h4>
         </div>
-        {race.current && (
-          <img src={`/assets/map/${race.circuitID}.avif`} alt='' />
-        )}
+        {
+          // If it's not the current year it doesnt show the map image
+          race.current && (
+            <img src={`/assets/map/${race.circuitID}.avif`} alt='' />
+          )
+        }
       </main>
       <ResultTable results={race.results} />
     </div>
