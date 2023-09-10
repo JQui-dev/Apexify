@@ -7,6 +7,7 @@ export function useNextRace () {
 
   useEffect(() => {
     fetchNextValid()
+    window.scrollTo({ top: 0 })
   }, [])
 
   const fetchNextValid = async () => {

@@ -1,3 +1,4 @@
+/* eslint-disable multiline-ternary */
 import { useParams } from 'react-router-dom'
 
 import { FaLocationDot } from 'react-icons/fa6'
@@ -6,17 +7,18 @@ import Loader from './../components/Loader'
 import { useResults } from '../hooks/useResults'
 import ResultTable from '../components/ResultTable'
 
-import NotRacedYet from './NotRacedYet.jsx'
+import { useFutureRace } from '../hooks/useFutureRace'
+import Counter from '../components/Counter'
 
 import './Race.scss'
 
 function Race () {
   const { year, round } = useParams()
+
   const { race, loading, error } = useResults({ year, round })
+  const { futureRace } = useFutureRace({ year, round })
 
-  if (loading) return <Loader what='Race' />
-
-  if (error) return <NotRacedYet year={year} round={round} />
+  if (loading) return <Loader />
 
   return (
     <div className='Race'>
@@ -24,20 +26,29 @@ function Race () {
         <div className='info'>
           <h1>{year}</h1>
           <h2>Round {round}</h2>
-          <h3>{race.name}</h3>
+          <h3>{race.name || futureRace.name}</h3>
           <h4>
             <FaLocationDot />
-            {race.circuitLocation}
+            {race.circuitLocation || futureRace.circuitLocation}
           </h4>
         </div>
         {
           // If it's not the current year it doesnt show the map image
-          race.current && (
-            <img src={`/assets/map/${race.circuitID}.avif`} alt='' />
-          )
+          race.current ||
+            (futureRace.current && (
+              <img
+                src={`/assets/map/${
+                  race.circuitID || futureRace.circuitID
+                }.avif`}
+              />
+            ))
         }
       </main>
-      <ResultTable results={race.results} />
+      {error ? (
+        <Counter date={futureRace?.date} time={futureRace?.time} />
+      ) : (
+        <ResultTable results={race.results} />
+      )}
     </div>
   )
 }

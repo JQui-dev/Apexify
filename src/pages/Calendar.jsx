@@ -13,9 +13,6 @@ function Calendar () {
   const handleSubmit = e => {
     e.preventDefault()
 
-    // Important to go top in mobile
-    window.scrollTo({ top: 0 })
-
     const newYear = e.target[0].value
     const intYear = parseInt(newYear)
     const thisYear = new Date().getFullYear()

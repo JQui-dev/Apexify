@@ -4,11 +4,6 @@ import './ResultTable.scss'
 function ResultTable ({ results }) {
   return (
     <section className='Results'>
-      <div className='titles'>
-        <h2>---</h2>
-        <h2 className='teamTitle'>Team</h2>
-        <h2>Time</h2>
-      </div>
       {results.map((driver, key) => (
         <div className='driver' key={key}>
           <div className='name'>

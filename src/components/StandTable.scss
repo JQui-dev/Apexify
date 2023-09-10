@@ -1,4 +1,9 @@
 .Stand {
+    overflow: hidden;
+
+    border: 2px solid #222;
+    border-radius: .25rem;
+    
     .row {
         display: grid;
         grid-template-columns: 3fr 2fr 1fr;
@@ -6,6 +11,7 @@
         overflow: hidden;
         width: 100%;
         height: 3.5rem;
+
 
         color: #000;
         &:nth-child(odd) { background: #ddd; }
@@ -38,7 +44,7 @@
 
             & img {
                 height: 3.5rem;
-                width: 30%;
+                width: 20%;
                 object-fit: contain;
                 scale: 1.75;
             }
