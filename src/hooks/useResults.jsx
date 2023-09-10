@@ -16,7 +16,7 @@ export function useResults ({ year, round }) {
       setError(false)
       setLoading(true)
       const data = await fetchAny({ param })
-      const dataPath = data?.Races[0]
+      const dataPath = data?.RaceTable?.Races[0]
       if (dataPath === undefined) {
         setError(true)
         return setLoading(false)

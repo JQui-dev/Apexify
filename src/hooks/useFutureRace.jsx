@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 
 import { fetchAny } from '../services/fetchAny'
 
-export function useFutureRace ({ year, round}) {
+export function useFutureRace ({ year, round }) {
   // FETCH THE RACE WITH THE PARAMS
   const [futureRace, setFutureRace] = useState({})
 
@@ -12,7 +12,7 @@ export function useFutureRace ({ year, round}) {
 
   const fetchFutureRace = async ({ year, round }) => {
     const data = await fetchAny({ param: `${year}/${round}` })
-    setFutureRace(data.Races[0])
+    setFutureRace(data.RaceTable.Races[0])
   }
 
   return { futureRace }

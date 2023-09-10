@@ -11,7 +11,7 @@ export function useNextRace () {
 
   const fetchNextValid = async () => {
     const next = await fetchAny({ param: 'current/next' })
-    const nextPath = next.Races[0]
+    const nextPath = next.RaceTable?.Races[0]
     const mapped = {
       season: nextPath.season,
       round: nextPath.round

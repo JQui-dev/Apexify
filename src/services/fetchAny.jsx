@@ -3,7 +3,7 @@ export const fetchAny = async ({ param }) => {
   try {
     const res = await fetch(LINK)
     const data = await res.json()
-    return data.MRData.RaceTable
+    return data.MRData
   } catch (error) {
     console.error('Error: ', error)
   }

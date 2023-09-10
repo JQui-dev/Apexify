@@ -10,7 +10,7 @@ function NavBar () {
         <NavLink to='/calendar'>
           <BsFillCalendarFill />
         </NavLink>
-        <NavLink to='/standing'>
+        <NavLink to='/standings/drivers'>
           <IoIosPodium />
         </NavLink>
         <NavLink to='/results'>
