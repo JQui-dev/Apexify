@@ -9,6 +9,7 @@ import Calendar from './pages/Calendar'
 import Race from './pages/Race'
 
 import Standings from './pages/Standings'
+import Driver from './pages/Driver'
 
 // COMPONENTS
 import NavBar from './components/NavBar'
@@ -30,6 +31,8 @@ function App () {
             <Route path='r/:year/:round' element={<Race />} />
 
             <Route path='/standings/:stand' element={<Standings />} />
+
+            <Route path='/driver/:driver' element={<Driver />} />
           </Routes>
           <div className='navMobile' />
         </div>

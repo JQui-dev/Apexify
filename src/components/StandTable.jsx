@@ -1,5 +1,7 @@
 import './StandTable.scss'
 
+import { Link } from 'react-router-dom'
+
 function StandTable ({ type, standings }) {
   if (type === 'drivers') {
     return (
@@ -8,7 +10,11 @@ function StandTable ({ type, standings }) {
           <div className='row' key={driver.id}>
             <div className='name'>
               <h2>{driver.position}</h2>
-              <h3>{driver.name}</h3>
+              <Link to={`/driver/${driver.id}`}>
+                <h3>
+                  {driver?.givenName} {driver.familyName}
+                </h3>
+              </Link>
             </div>
             <div className='teamImg'>
               <img src={`/assets/team/${driver.teamId}.png`} />
@@ -27,7 +33,9 @@ function StandTable ({ type, standings }) {
           <div className='row' key={team.id}>
             <div className='name'>
               <h2>{team.position}</h2>
-              <h3>{team.name}</h3>
+              <Link to={`/constructor/${team.id}`}>
+                <h3>{team.name}</h3>
+              </Link>
             </div>
             <div className='teamImg'>
               <img src={`/assets/team/${team.id}.png`} />

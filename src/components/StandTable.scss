@@ -32,9 +32,15 @@
 
                 font-weight: 300;
             }
-            & h3 {
-                display: grid;
-                place-items: center;
+            & a {
+                color: #000;
+                &:hover {
+                    color: #a00;
+                }
+                & h3 {
+                    display: grid;
+                    place-items: center;
+                }
             }
         }
         .teamImg {
@@ -43,10 +49,11 @@
             width: 100%;
 
             & img {
+                overflow: hidden;
                 height: 3.5rem;
                 width: 20%;
                 object-fit: contain;
-                scale: 1.75;
+                scale: 2;
             }
         }
         & h4 {

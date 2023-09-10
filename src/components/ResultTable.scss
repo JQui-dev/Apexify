@@ -1,5 +1,8 @@
 .Results {
     overflow: hidden;
+    @media (min-width: 300px) {
+        width: 100%;
+    }
 
     border: 2px solid #222;
     border-radius: .5rem;
@@ -35,11 +38,21 @@
 
                 font-weight: 300;
             }
-            .driverNameMobile { display: none; }
+
+            & a {
+                color: #000;
+                &:hover { color: #a00; }
+                & h3 {}
+                .driverNameMobile { display: none; }
+            }
         }
         .constructor {
             display: grid;
             place-items: center;
+
+            color: #000;
+
+            &:hover { color: #a00; }
         }
         .time {
             display: grid;
@@ -56,21 +69,23 @@
     @media (max-width: 600px) { 
     .titles, .driver {
         grid-template-columns: repeat(2, 1fr); 
-            
+         
         .teamTitle, .driverName {
             display: none;
             }
         }
         .driver {
             .name {
-            .driverNameMobile {
-                display: block;
-                font-weight: 600;
-                max-width: 125px;
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-            }
+                & a {
+                    max-width: 125px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    .driverNameMobile {
+                        display: block;
+                        font-weight: 600;
+                    }
+                }
         }
         .constructor { display: none; }
     }

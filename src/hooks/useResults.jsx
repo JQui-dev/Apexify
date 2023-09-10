@@ -43,7 +43,7 @@ export function useResults ({ year, round }) {
           FLTime: res.FastestLap?.Time?.time,
           FLAvSpeed: res.FastestLap?.AverageSpeed?.speed,
           FLAvSpeedUnit: res.FastestLap?.AverageSpeed?.unit,
-          driverID: res.Driver?.driverId,
+          id: res.Driver?.driverId,
           code: res.Driver?.code,
           givenName: res.Driver?.givenName,
           familyName: res.Driver?.familyName,

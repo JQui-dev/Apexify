@@ -1,6 +1,8 @@
 /* eslint-disable indent */
 import './ResultTable.scss'
 
+import { Link } from 'react-router-dom'
+
 function ResultTable ({ results }) {
   return (
     <section className='Results'>
@@ -8,14 +10,21 @@ function ResultTable ({ results }) {
         <div className='driver' key={key}>
           <div className='name'>
             <h3 className='pos'>{driver.position}</h3>
-            <h3 className='driverName'>
-              {driver?.givenName} {driver.familyName}
-            </h3>
-            <h3 className='driverNameMobile'>
-              {driver?.givenName?.charAt(0)}. {driver.familyName}
-            </h3>
+            <Link to={`/driver/${driver.id}`}>
+              <h3 className='driverName'>
+                {driver?.givenName} {driver.familyName}
+              </h3>
+              <h3 className='driverNameMobile'>
+                {driver?.givenName?.charAt(0)}. {driver.familyName}
+              </h3>
+            </Link>
           </div>
-          <h4 className='constructor'>{driver.constructorName}</h4>
+          <Link
+            to={`constructor/${driver.constructorID}`}
+            className='constructor'
+          >
+            <h4>{driver.constructorName}</h4>
+          </Link>
           <h5 className='time'>
             {driver.status === 'Finished'
               ? driver.time

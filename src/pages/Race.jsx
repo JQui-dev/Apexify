@@ -21,7 +21,7 @@ function Race () {
   if (loading) return <Loader />
 
   return (
-    <div className='Race'>
+    <div className={`Race ${error && 'NotRacedYet'}`}>
       <main>
         <div className='info'>
           <h1>{year}</h1>
