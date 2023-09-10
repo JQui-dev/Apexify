@@ -34,14 +34,13 @@ function Race () {
         </div>
         {
           // If it's not the current year it doesnt show the map image
-          race.current ||
-            (futureRace.current && (
-              <img
-                src={`/assets/map/${
-                  race.circuitID || futureRace.circuitID
-                }.avif`}
-              />
-            ))
+          (race?.current || futureRace?.current) && (
+            <img
+              src={`/assets/map/${
+                race?.circuitID || futureRace?.circuitID
+              }.avif`}
+            />
+          )
         }
       </main>
       {error ? (

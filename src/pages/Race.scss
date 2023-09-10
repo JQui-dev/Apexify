@@ -14,6 +14,8 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+
+            text-align: center;
             
             padding: 1rem 0;
             gap: .5rem;
@@ -27,7 +29,6 @@
                 font-size: 4.75rem;
                 line-height: 4.25rem;
                 font-weight: 700;
-                text-align: center;
                 color: #a00;
             }
             & h3 {
@@ -92,14 +93,14 @@
                 place-items: center;
             }
             & h2 {
-                width: 5rem;
+                width: 4rem;
                 
-                font-size: 3rem;
+                font-size: 2.25rem;
                 font-weight: 900;
             }
             & h3 {
-                width: 6rem;
-                font-size: 1.5rem;
+                width: 5rem;
+                font-size: 1rem;
                 font-weight: 300;
                 color: #555;
             }

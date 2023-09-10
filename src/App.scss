@@ -58,7 +58,7 @@
         }
         & a:hover {
             animation: navBtn 500ms ease-in-out infinite both;
-            & svg { color: #f00; }
+            & svg { color: #a00; }
         }
         & a:active svg { transform: scale(1.1); }
     }
@@ -74,10 +74,10 @@
 // Animations
 @keyframes navBtn {
     from, to { border: 2px solid transparent; }
-    23% { border-left: 2px solid #f00;}
-    46% { border-bottom: 2px solid #f00;}
-    65% { border-right: 2px solid #f00;}
-    80% { border-top: 2px solid #f00;}
+    23% { border-left: 2px solid #a00;}
+    46% { border-bottom: 2px solid #a00;}
+    65% { border-right: 2px solid #a00;}
+    80% { border-top: 2px solid #a00;}
 }
 
 // MOBILE -> NavBar displayed at the bottom
