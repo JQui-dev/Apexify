@@ -39,6 +39,7 @@ function Race () {
               src={`/assets/map/${
                 race?.circuitID || futureRace?.circuitID
               }.avif`}
+              alt={`${race?.name || futureRace?.name} map`}
             />
           )
         }

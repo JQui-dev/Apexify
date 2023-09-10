@@ -19,12 +19,9 @@ function ResultTable ({ results }) {
               </h3>
             </Link>
           </div>
-          <Link
-            to={`constructor/${driver.constructorID}`}
-            className='constructor'
-          >
+          <div className='constructor'>
             <h4>{driver.constructorName}</h4>
-          </Link>
+          </div>
           <h5 className='time'>
             {driver.status === 'Finished'
               ? driver.time

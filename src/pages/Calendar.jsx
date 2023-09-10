@@ -1,8 +1,6 @@
 import { useCalendar } from '../hooks/useCalendar'
 import { useNextRace } from '../hooks/useNextRace'
 
-import { BsFillCalendarFill } from 'react-icons/bs'
-
 import Races from '../components/Races'
 import Loader from '../components/Loader'
 
@@ -33,14 +31,13 @@ function Calendar () {
 
   return (
     <div className='Calendar'>
-      <h1>
-        <BsFillCalendarFill />
-        {races[0]?.season}
-      </h1>
-      <form onSubmit={e => handleSubmit(e)}>
-        <input type='text' required placeholder='2021, 2007, 1987...' />
-        <button type='submit'>Search</button>
-      </form>
+      <header>
+        <h1>{races[0]?.season}</h1>
+        <form onSubmit={e => handleSubmit(e)}>
+          <input type='text' required placeholder='2021, 2007, 1987...' />
+          <button type='submit'>Search</button>
+        </form>
+      </header>
       <Races races={races} next={nextValid} />
     </div>
   )

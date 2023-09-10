@@ -11,7 +11,7 @@ export function useDriver ({ driver }) {
     fetchDriverResults({ driver })
   }, [])
 
-  const fetchDriver = async ({driver}) =>{
+  const fetchDriver = async ({ driver }) => {
     try {
       setLoading(true)
       const info = await fetchDriverInfo({ driver })
@@ -33,7 +33,7 @@ export function useDriver ({ driver }) {
         code: driverPath.code,
         dateOfBirth: driverPath.dateOfBirth,
         name: `${driverPath.givenName} ${driverPath.familyName}`,
-        nationality: (driverPath.nationality).toUpperCase(),
+        nationality: driverPath.nationality.toUpperCase(),
         number: driverPath.permanentNumber
       }
       return newData

@@ -33,9 +33,7 @@ function StandTable ({ type, standings }) {
           <div className='row' key={team.id}>
             <div className='name'>
               <h2>{team.position}</h2>
-              <Link to={`/constructor/${team.id}`}>
-                <h3>{team.name}</h3>
-              </Link>
+              <h3>{team.name}</h3>
             </div>
             <div className='teamImg'>
               <img src={`/assets/team/${team.id}.png`} />

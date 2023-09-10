@@ -1,4 +1,4 @@
-import { Link, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 
 import { useDriver } from '../hooks/useDriver'
 
@@ -31,12 +31,7 @@ function Driver () {
             <h4>{year.points}</h4>
             <div className='constructors'>
               {year.constructors.map(constructor => (
-                <Link
-                  to={`/constructor/${constructor.id}`}
-                  key={constructor.id}
-                >
-                  <h5>{constructor.name}</h5>
-                </Link>
+                <h5 key={constructor.id}>{constructor.name}</h5>
               ))}
             </div>
           </div>
