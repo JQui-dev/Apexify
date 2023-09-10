@@ -1,0 +1,90 @@
+.Results {
+    overflow: hidden;
+    @media (min-width: 300px) {
+        width: 100%;
+    }
+
+    border: 2px solid #222;
+    border-radius: .5rem;
+
+    .driver {
+        display: grid;
+        place-items: center;
+
+        grid-template-columns: repeat(3, 1fr);
+
+        gap: 1rem;
+        padding: 1rem .75rem;
+
+        color: #000;
+        &:nth-child(even) { background: #ddd; }
+        &:nth-child(odd) { background: #ccc; }
+        
+        .name {
+            overflow: hidden;
+
+            display: flex;
+            align-items: center;
+
+            width: 100%;
+
+            gap: .5rem;
+
+            .pos {
+                display: grid;
+                place-items: center;
+                
+                width: 2rem;
+
+                font-weight: 300;
+            }
+
+            & a {
+                color: #000;
+                &:hover { color: #a00; }
+                .driverNameMobile { display: none; }
+            }
+        }
+        .constructor {
+            display: grid;
+            place-items: center;
+
+            color: #000;
+        }
+        .time {
+            display: grid;
+            place-items: center;
+
+            text-align: center;
+
+            width: 5rem;
+            font-weight: 500;
+        }
+    }
+
+    // Two Columns in mobile
+    @media (max-width: 600px) { 
+    .titles, .driver {
+        grid-template-columns: repeat(2, 1fr); 
+         
+        .teamTitle, .driverName {
+            display: none;
+            }
+        }
+        .driver {
+            .name {
+                & a {
+                    max-width: 125px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    .driverNameMobile {
+                        display: block;
+                        font-weight: 600;
+                    }
+                }
+        }
+        .constructor { display: none; }
+    }
+    }
+}

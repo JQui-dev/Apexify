@@ -1,15 +1,14 @@
-// MODULES
+import './Loader.scss'
 
-// COMPONENTS
-
-// STYLE
-import './style/Loader.scss'
-
-function Loader() {
+function Loader () {
   return (
-    <div className='Loader'>
-      <img className='wheel' src="/logo.png" rel='preload'/>
-    </div>
+    <section className='Loader'>
+      <div className='lines'>
+        <div className='line' />
+        <div className='line' />
+        <div className='line' />
+      </div>
+    </section>
   )
 }
 

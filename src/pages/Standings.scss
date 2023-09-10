@@ -1,0 +1,43 @@
+.Standings {
+    display: flex;
+    flex-direction: column;
+
+    gap: .5rem;
+
+    font-size: .8rem;
+
+    & header {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-evenly;
+
+        gap: .75rem;
+
+        width: 100%;
+
+        .link {
+            flex: 1;
+
+            display: grid;
+            place-items: center;
+
+            padding: 1rem;
+            
+            min-width: 240px;
+
+            font-weight: 800;
+
+            border-radius: .25rem;
+
+            color: #000;
+            background: #fff;
+
+            &:hover { box-shadow: 0 0 20px #a00; }
+        }
+        .drivers, .constructors {
+            color: #fff;
+            background: #a00;
+        }
+    }
+}

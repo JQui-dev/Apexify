@@ -1,0 +1,73 @@
+.Races {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    
+    gap: .5rem;
+
+    .race {
+        overflow: hidden;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+
+        border: 2.5px solid #222;
+        border-radius: .25rem;
+
+        background: #000;
+
+        .main {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: .25rem;
+            padding: .5rem .75rem;
+
+            color: #fff;
+
+            // Round number
+            & h2 { font-weight: 100; }
+            // Race title
+            & h3 { font-size: .9rem; }
+        }
+
+        .sessions {
+            display: flex;
+            flex-direction: column-reverse;
+
+            .session {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                padding: .25rem .5rem;
+
+                color: #000;
+                background: #ddd;
+                
+                &:nth-child(odd) {
+                    background: #ccc;
+                }
+
+                & h4 { font-weight: 800; }
+
+                & aside {
+                    display: grid;
+                    place-items: center;
+
+                    & h5 {}
+                    & h6 { font-weight: 400; }
+                }
+            }
+        }
+    }
+    .next {
+        box-shadow: 0px 0px 5px #a00;
+
+        .main {
+
+            & h2 { color: #a00; font-weight: 900; }
+        }
+    }
+}

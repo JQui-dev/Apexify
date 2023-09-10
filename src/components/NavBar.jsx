@@ -1,48 +1,27 @@
-// MODULES
-import { Link, NavLink } from "react-router-dom"
-  import { GoPerson } from "react-icons/go"
-  import { AiOutlineFolder, AiOutlineDashboard, AiOutlineFire, AiOutlineEye } from "react-icons/ai"
+import { NavLink } from 'react-router-dom'
 
-// COMPONENTS
+import { BsFillCalendarFill } from 'react-icons/bs'
+import { IoIosPodium, IoMdMedal } from 'react-icons/io'
 
-// STYLE
-import './style/NavBar.scss'
-
-function NavBar() {
+function NavBar () {
   return (
-    <div className="NavBar">
-      <Link to="/" className="title">
-        <h1>GP Tracker</h1>
-        <img src="/logo.png" alt="logo"/>
-      </Link>
-      <nav>
-
-        <NavLink to="/next">
-          <AiOutlineFire/>
-          <h3>Next</h3>
+    <nav>
+      <section>
+        <NavLink to='/calendar'>
+          <BsFillCalendarFill />
         </NavLink>
-
-        <NavLink to="/last">
-          <AiOutlineDashboard/>
-          <h3>Last</h3>
+        <NavLink to='/standings/drivers'>
+          <IoIosPodium />
         </NavLink>
-
-        <NavLink to="/" className="main">
-          <img src="/logo.png"/>
+        <NavLink to='/results'>
+          <IoMdMedal />
         </NavLink>
-        
-        <NavLink to="/stand">
-          <AiOutlineFolder/>  
-          <h3>Stand</h3>
-        </NavLink>
+      </section>
 
-        <NavLink to="/profile">
-          <GoPerson/>
-          <h3>Profile</h3>
-        </NavLink>
-
-      </nav>
-    </div>
+      <NavLink to='/'>
+        <img src='/logo.png' alt='logo' />
+      </NavLink>
+    </nav>
   )
 }
 
