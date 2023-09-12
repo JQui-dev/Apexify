@@ -13,7 +13,7 @@ function NavBar () {
         <NavLink to='/standings/drivers'>
           <IoIosPodium />
         </NavLink>
-        <NavLink to='/results'>
+        <NavLink to='/champions'>
           <IoMdMedal />
         </NavLink>
       </section>

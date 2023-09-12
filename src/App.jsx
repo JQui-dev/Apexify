@@ -11,6 +11,8 @@ import Race from './pages/Race'
 import Standings from './pages/Standings'
 import Driver from './pages/Driver'
 
+import Champions from './pages/Champions'
+
 // COMPONENTS
 import NavBar from './components/NavBar'
 
@@ -33,6 +35,8 @@ function App () {
             <Route path='/standings/:stand' element={<Standings />} />
 
             <Route path='/driver/:driver' element={<Driver />} />
+
+            <Route path='/champions' element={<Champions />} />
           </Routes>
           <div className='navMobile' />
         </div>

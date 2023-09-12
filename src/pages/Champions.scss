@@ -1,0 +1,63 @@
+.Champions {
+    display: grid;
+    place-items: center;
+
+    & h1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        gap: .5rem;
+        padding: 1rem;
+
+        font-size: 2rem;
+        font-weight: 900;
+        
+        & svg {
+            font-size: 5rem;
+            filter: drop-shadow(0 0 5px #f00);
+            color: #fa0;
+        }
+    }
+
+    .champs {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        
+        gap: .25rem;
+        padding: .25rem;
+
+        overflow: hidden;
+        width: 100%;
+        
+        border: 2px solid #222;
+        border-radius: .5rem;
+
+        background: #ccc;
+        
+        .champ {
+            display: grid;
+            
+            border-radius: .25rem;
+            background: #ddd;
+
+            & a {
+                display: flex;
+                align-items: center;
+                
+                gap: .25rem;
+                
+                font-size: .7rem;
+                
+                padding: .75rem .5rem;
+
+                color: #000;
+                &:hover { color: #a00; }
+
+                & svg { color: #a50a; }
+                & h2 {}
+            }
+        }
+    }
+}
