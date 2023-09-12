@@ -1,6 +1,8 @@
 import { useCalendar } from '../hooks/useCalendar'
 import { useNextRace } from '../hooks/useNextRace'
 
+import { FaSearch } from 'react-icons/fa'
+
 import Races from '../components/Races'
 import Loader from '../components/Loader'
 
@@ -35,7 +37,9 @@ function Calendar () {
         <h1>{races[0]?.season}</h1>
         <form onSubmit={e => handleSubmit(e)}>
           <input type='text' required placeholder='2021, 2007, 1987...' />
-          <button type='submit'>Search</button>
+          <button type='submit'>
+            <FaSearch />
+          </button>
         </form>
       </header>
       <Races races={races} next={nextValid} />
