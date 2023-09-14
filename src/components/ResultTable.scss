@@ -1,11 +1,15 @@
 .Results {
-    overflow: hidden;
-    @media (min-width: 300px) {
-        width: 100%;
-    }
+    display: grid;
+    gap: 1px;
 
-    border: 2px solid #222;
+    overflow: hidden;
+
+    // To avoid bug with the width in mobile
+    @media (min-width: 300px) { width: 100%; }
+
     border-radius: .5rem;
+
+    background: #aaa;
 
     .driver {
         display: grid;

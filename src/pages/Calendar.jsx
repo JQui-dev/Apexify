@@ -36,7 +36,7 @@ function Calendar () {
       <header>
         <h1>{races[0]?.season}</h1>
         <form onSubmit={e => handleSubmit(e)}>
-          <input type='text' required placeholder='2021, 2007, 1987...' />
+          <input type='text' required placeholder='2021, 1950...' />
           <button type='submit'>
             <FaSearch />
           </button>

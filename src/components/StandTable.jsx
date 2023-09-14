@@ -17,7 +17,7 @@ function StandTable ({ type, standings }) {
               </Link>
             </div>
             <div className='teamImg'>
-              <img src={`/assets/team/${driver.teamId}.png`} />
+              <img loading='lazy' src={`/assets/team/${driver.teamId}.png`} />
             </div>
             <h4>{driver.points}</h4>
           </div>

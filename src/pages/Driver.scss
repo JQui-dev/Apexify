@@ -39,19 +39,22 @@
         & h3 {
             font-size: 1.25rem;
             font-weight: 600;
-            color: #aaa;
+
+            color: #888;
         }
-        & h4 {
-            font-weight: 300;
-        }
+        & h4 { font-weight: 500; }
     }
 
     .driverResults {
+        display: grid;
+        gap: 1px;
+
         overflow: hidden;
         width: 100%;
 
-        border: 2px solid #222;
         border-radius: .25rem;
+
+        background: #aaa;
         
         .season {
             display: grid;
@@ -70,13 +73,9 @@
                 text-align: center;
             }
 
-            & h2 {
-            }
-
-            & h4 {
-            }
-            & h3 {
-            }
+            & h2 {}
+            & h4 {}
+            & h3 {}
 
             .constructors {
 

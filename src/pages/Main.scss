@@ -54,52 +54,50 @@
         gap: 1rem;
         padding: 3rem 0;
         
-        & article {
-            position: relative;
-            z-index: 100;
+        & a {
+            font-size: 1.25rem;
+            color: #a00;
 
-            flex: 1;
-
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-evenly;
-            
-            gap: .2rem;
-            padding: .75rem 1rem;
-            
-            min-width: 250px;
-            max-width: 300px;
-            height: 200px;
-
-            text-align: center;
-
-            border-radius: .75rem;
-
-            box-shadow: 0 0 2rem #000;
-
-            background: #000;
-
-            &:hover {
-                & a { & h2 { color: #f00; } }
-                & p { color: #fff; }
-                transition: 150ms box-shadow;
-                box-shadow: 0 0 2rem #a00;
-            }
-
-            & a {
-                font-size: 1.25rem;
-                color: #a00;
+            & article {
+                flex: 1;
+    
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-evenly;
                 
+                gap: .2rem;
+                padding: .75rem 1rem;
+                
+                min-width: 250px;
+                max-width: 300px;
+                height: 200px;
+    
+                text-align: center;
+    
+                border-radius: .75rem;
+    
+                box-shadow: 0 0 2rem #000a;
+    
+                background: #111;
+    
+                &:hover {
+                    & h2 { color: #f00; }
+                    & p { color: #fff; }
+                    transition: 150ms box-shadow;
+                    box-shadow: 0 0 2rem #a00;
+                }
+    
                 & h2 { font-weight: 800; }
-            }
-
-            & p {
-                font-size: 1rem;
-                font-weight: 500;
-                color: #ddd;
-            }
+    
+                & p {
+                    font-size: 1rem;
+                    font-weight: 500;
+                    color: #ddd;
+                }
+            }            
         }
+        
     }
 
     & footer {
@@ -141,7 +139,7 @@
             gap: .5rem;
             
             & a { 
-                color: #fff; 
+                color: #000; 
                 &:nth-child(1) { 
                     font-size: 1rem;
                     font-weight: 600;

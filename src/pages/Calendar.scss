@@ -17,8 +17,8 @@
             display: flex;
             align-items: center;
     
-            font-size: 7rem;
-            line-height: 6.25rem;
+            font-size: 5.5rem;
+            line-height: 4.75rem;
             font-weight: 900;
             letter-spacing: -.1rem;
             word-spacing: .25rem;
@@ -28,12 +28,19 @@
         }
     
         & form {
+            overflow: hidden;
+
             & input {
                 padding: .5rem 0;
                 padding-left: .5rem;
                 
-                min-width: 250px;
-    
+                min-width: 50px;
+                
+                border-radius: .5rem;
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+                border: 2px solid #000;
+                
                 color: #000;
                 background: #fff;
             }
@@ -41,18 +48,16 @@
                 padding: .5rem 0;
                 min-width: 50px;
     
-                border-top-right-radius: .5rem;
-                border-bottom-right-radius: .5rem;
-    
                 font-weight: 600;
+
+                border-radius: .5rem;
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+                border: 2px solid #000;
     
                 color: #fff;
                 background: #000;
             }
-    
-            overflow: hidden;
-            border-radius: .5rem;
-    
         }
     }
     
@@ -61,12 +66,6 @@
             & h1 {
                 justify-content: center;
                 font-size: 6rem;
-            }
-            & form {
-                & input, button {
-                    width: 100%;
-                    border-radius: 0;
-                }
             }
         }
     }

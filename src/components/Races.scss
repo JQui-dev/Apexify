@@ -11,10 +11,7 @@
         flex-direction: column;
         justify-content: space-evenly;
 
-        border: 2.5px solid #222;
         border-radius: .25rem;
-
-        background: #000;
 
         .main {
             display: flex;
@@ -25,9 +22,10 @@
             padding: .5rem .75rem;
 
             color: #fff;
+            background: #000;
 
             // Round number
-            & h2 { font-weight: 100; }
+            & h2 { font-weight: 300; }
             // Race title
             & h3 { font-size: .8rem; }
         }
@@ -46,9 +44,7 @@
                 color: #000;
                 background: #ddd;
                 
-                &:nth-child(odd) {
-                    background: #ccc;
-                }
+                &:nth-child(odd) { background: #eee; }
 
                 & h4 { font-weight: 800; }
 
@@ -63,7 +59,7 @@
         }
     }
     .next {
-        box-shadow: 0px 0px 5px #a00;
+        box-shadow: 0px 0px .5rem #a00;
 
         .main {
 

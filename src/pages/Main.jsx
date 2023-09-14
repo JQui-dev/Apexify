@@ -13,33 +13,33 @@ function Main () {
         <h2>Experience Formula 1 like never before</h2>
       </section>
       <section className='info'>
-        <article>
-          <Link to='/calendar'>
+        <Link to='/calendar'>
+          <article>
             <h2>Calendar</h2>
-          </Link>
-          <p>
-            Get ready to rev your engines! From iconic circuits to
-            heart-pounding action, we've got your race schedule covered.
-          </p>
-        </article>
-        <article>
-          <Link to='/standings/drivers'>
+            <p>
+              Get ready to rev your engines! From iconic circuits to
+              heart-pounding action, we've got your race schedule covered.
+            </p>
+          </article>
+        </Link>
+        <Link to='/standings/drivers'>
+          <article>
             <h2>Standings</h2>
-          </Link>
-          <p>
-            Dive into the statistics, witness the drama, and track the rise of
-            champions in the making.
-          </p>
-        </article>
-        <article>
-          <Link to='/champions'>
+            <p>
+              Dive into the statistics, witness the drama, and track the rise of
+              champions in the making.
+            </p>
+          </article>
+        </Link>
+        <Link to='/champions'>
+          <article>
             <h2>Hall of Fame</h2>
-          </Link>
-          <p>
-            Experience the legacy of F1 paying tribute to the legends who
-            conquered the track, showcasing every F1 champion in history.
-          </p>
-        </article>
+            <p>
+              Experience the legacy of F1 paying tribute to the legends who
+              conquered the track, showcasing every F1 champion in history.
+            </p>
+          </article>
+        </Link>
       </section>
       <footer>
         <header>
