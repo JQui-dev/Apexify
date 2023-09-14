@@ -4,13 +4,23 @@ import { useParams, Link } from 'react-router-dom'
 import StandTable from './../components/StandTable'
 import Loader from './../components/Loader'
 
+import { useState } from 'react'
 import { useStandings } from './../hooks/useStandings'
 
 import './Standings.scss'
 
 function Standings () {
   const { stand } = useParams()
-  const { standings, loading, fetchStand } = useStandings()
+  const [data, setData] = useState({})
+  const { standings, loading } = useStandings({
+    type: data.type,
+    standing: data.stand
+  })
+
+  const handleClick = value => {
+    if (value) return setData({ type: 'drivers', stand: 'current/driverStandings' })
+    return setData({ type: 'constructors', stand: 'current/constructorStandings' })
+  }
 
   if (loading) return <Loader />
 
@@ -18,22 +28,14 @@ function Standings () {
     <div className='Standings'>
       <header>
         <Link
-          onClick={() =>
-            fetchStand({
-              type: 'drivers',
-              stand: 'current/driverStandings'
-            })}
+          onClick={() => handleClick(true)}
           to='/standings/drivers'
           className={`${stand === 'drivers' && stand} link`}
         >
           Drivers'
         </Link>
         <Link
-          onClick={() =>
-            fetchStand({
-              type: 'constructors',
-              stand: 'current/constructorStandings'
-            })}
+          onClick={() => handleClick(false)}
           to='/standings/constructors'
           className={`${stand === 'constructors' && stand} link`}
         >

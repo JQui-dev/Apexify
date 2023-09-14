@@ -7,18 +7,13 @@
     & header {
         display: grid;
         place-items: center;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-
-        @media (min-width: 600px) {
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-        }
-
+            
         & h1 {
             display: flex;
             align-items: center;
+            justify-content: center;
     
-            font-size: 5.5rem;
-            line-height: 4.75rem;
+            font-size: 6rem;
             font-weight: 900;
             letter-spacing: -.1rem;
             word-spacing: .25rem;
@@ -57,15 +52,6 @@
     
                 color: #fff;
                 background: #000;
-            }
-        }
-    }
-    
-    @media (width <= 450px) {
-        & header {
-            & h1 {
-                justify-content: center;
-                font-size: 6rem;
             }
         }
     }

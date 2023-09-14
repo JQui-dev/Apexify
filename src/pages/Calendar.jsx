@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { useCalendar } from '../hooks/useCalendar'
 import { useNextRace } from '../hooks/useNextRace'
 
@@ -9,7 +10,8 @@ import Loader from '../components/Loader'
 import './Calendar.scss'
 
 function Calendar () {
-  const { races, fetchCalendar, loading } = useCalendar()
+  const [year, setYear] = useState()
+  const { races, loading } = useCalendar({ year })
   const { nextValid } = useNextRace()
 
   const handleSubmit = e => {
@@ -22,10 +24,9 @@ function Calendar () {
     // FETCH FULL CALENDAR
     // Check the range of the year to fetch the calendar
     if (intYear >= 1950 && intYear <= thisYear) {
-      if (newYear === 'current') return fetchCalendar({ year: thisYear })
-      return fetchCalendar({ year: newYear })
+      if (newYear === 'current') return setYear(thisYear)
+      return setYear(newYear)
     }
-
     e.target[0].value = ''
   }
 

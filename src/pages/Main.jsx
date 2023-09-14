@@ -17,8 +17,7 @@ function Main () {
           <article>
             <h2>Calendar</h2>
             <p>
-              Get ready to rev your engines! From iconic circuits to
-              heart-pounding action, we've got your race schedule covered.
+              From iconic circuits to heart-pounding action, we've got your race schedule covered.
             </p>
           </article>
         </Link>
@@ -26,8 +25,7 @@ function Main () {
           <article>
             <h2>Standings</h2>
             <p>
-              Dive into the statistics, witness the drama, and track the rise of
-              champions in the making.
+              Dive into the statistics and track the rise of champions in the making.
             </p>
           </article>
         </Link>
@@ -36,7 +34,7 @@ function Main () {
             <h2>Hall of Fame</h2>
             <p>
               Experience the legacy of F1 paying tribute to the legends who
-              conquered the track, showcasing every F1 champion in history.
+              conquered the track.
             </p>
           </article>
         </Link>
