@@ -6,14 +6,13 @@
     overflow: hidden;
     height: 100dvh;
 
+    gap: .2rem;
+
     font-size: 14px;
     @media (max-width: 300px) { font-size: 13px; } 
 
-    background-image: repeating-linear-gradient(45deg, #a00 0, #a00 0.5px, transparent 0, transparent 50%);
-    background-size: 300px 300px;
-
     color: #000;
-    background: #eee;
+    background: #a00;
 
     & nav {
         z-index: 999;
@@ -67,6 +66,9 @@
     .screen {
         overflow-y: auto;
         padding: .75rem;
+
+        background: #EEE;
+
         .navMobile { display: none; }
     }
 }
@@ -85,7 +87,7 @@
     .App {
         display: flex;
         flex-direction: column;
-    
+
         & nav {
             flex-direction: row; // <- column
 
@@ -95,6 +97,8 @@
             // Fixed to the bottom
             position: absolute;
             bottom: 0;
+
+            border-top: .2rem solid #a00;
     
             & section { flex-direction: row; } // column
     

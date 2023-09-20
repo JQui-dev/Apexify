@@ -12,6 +12,11 @@ export function useFutureRace ({ year, round }) {
   }, [year, round])
 
   const fetchFutureRace = async ({ year, round }) => {
+    const newData = await fetchRace({ year, round })
+    setFutureRace(newData)
+  }
+
+  const fetchRace = async ({ year, round }) => {
     const data = await fetchAny({ param: `${year}/${round}` })
     const path = data.RaceTable.Races[0]
     const isCurrentyear = currentYear({ year: path?.season })
@@ -23,7 +28,7 @@ export function useFutureRace ({ year, round }) {
       date: path.date,
       time: path.time
     }
-    setFutureRace(newData)
+    return newData
   }
 
   return { futureRace }
