@@ -47,9 +47,6 @@ function Race () {
         </section>
         <section className='dataSection'>
           <Counter date={futureRace?.date} time={futureRace?.time} />
-          <div className='lastWinner'>
-            <h2>Last Winner</h2>
-          </div>
         </section>
       </div>
     )

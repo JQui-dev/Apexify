@@ -1,14 +1,3 @@
-export const dateFormat = ({ dateToFormat }) => {
-  const date = new Date(dateToFormat)
-
-  const month = date.getMonth() + 1 // Months are zero-based
-  const day = date.getDate()
-
-  const newDate = `${month} / ${day}`
-
-  return newDate
-}
-
 export const timeFormat = ({ timeToFormat }) => {
   const parsedTime = new Date(`1970-01-01T${timeToFormat}`)
 
@@ -20,4 +9,23 @@ export const timeFormat = ({ timeToFormat }) => {
 
     return newTime
   }
+}
+
+export const positionFormat = ({ position }) => {
+  if (
+    position.endsWith('11') ||
+    position.endsWith('12') ||
+    position.endsWith('13')
+  ) {
+    return `${position}th`
+  }
+
+  if (position.endsWith('1')) {
+    return `${position}st`
+  } else if (position.endsWith('2')) {
+    return `${position}nd`
+  } else if (position.endsWith('3')) {
+    return `${position}rd`
+  }
+  return `${position}th`
 }

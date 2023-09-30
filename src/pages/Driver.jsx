@@ -25,7 +25,10 @@ function Driver () {
 
       <section className='driverResults'>
         {driverResults.map(year => (
-          <div className='season' key={year.season}>
+          <div
+            className={`${year.position === '1st' && 'champ'} season`}
+            key={year.season}
+          >
             <h2 className='year'>{year.season}</h2>
             <h3>{year.position}</h3>
             <h4>{year.points}</h4>

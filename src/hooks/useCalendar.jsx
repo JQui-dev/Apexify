@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react'
 
 import { fetchAny } from './../services/fetchAny'
-import { dateFormat, timeFormat } from '../services/formatData'
+import { timeFormat } from '../services/formatData'
 
 export function useCalendar ({ year }) {
   const [loading, setLoading] = useState(true)
@@ -22,32 +22,32 @@ export function useCalendar ({ year }) {
           const sessionData = [
             {
               type: 'FP1',
-              date: dateFormat({ dateToFormat: race?.FirstPractice?.date }),
+              date: race?.FirstPractice?.date,
               time: timeFormat({ timeToFormat: race?.FirstPractice?.time })
             },
             {
               type: 'FP2',
-              date: dateFormat({ dateToFormat: race?.SecondPractice?.date }),
+              date: race?.SecondPractice?.date,
               time: timeFormat({ timeToFormat: race?.SecondPractice?.time })
             },
             {
               type: 'FP3',
-              date: dateFormat({ dateToFormat: race?.ThirdPractice?.date }),
+              date: race?.ThirdPractice?.date,
               time: timeFormat({ timeToFormat: race?.ThirdPractice?.time })
             },
             {
               type: 'Qualifying',
-              date: dateFormat({ dateToFormat: race?.Qualifying?.date }),
+              date: race?.Qualifying?.date,
               time: timeFormat({ timeToFormat: race?.Qualifying?.time })
             },
             {
               type: 'Sprint',
-              date: dateFormat({ dateToFormat: race?.Sprint?.date }),
+              date: race?.Sprint?.date,
               time: timeFormat({ timeToFormat: race?.Sprint?.time })
             },
             {
               type: 'Race',
-              date: dateFormat({ dateToFormat: race?.date }),
+              date: race?.date,
               time: timeFormat({ timeToFormat: race?.time })
             }
           ]

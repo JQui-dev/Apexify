@@ -27,8 +27,8 @@ function Races ({ races, next }) {
                   <div className='session'>
                     <h4>{ses.type}</h4>
                     <aside>
-                      <h5>{ses.date}</h5>
                       <h6>{ses?.time}</h6>
+                      <h5>{ses.date}</h5>
                     </aside>
                   </div>
                 )}

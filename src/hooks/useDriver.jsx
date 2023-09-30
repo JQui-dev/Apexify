@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { fetchAny } from './../services/fetchAny'
+import { positionFormat } from './../services/formatData'
 
 export function useDriver ({ driver }) {
   const [loading, setLoading] = useState(true)
@@ -51,7 +52,9 @@ export function useDriver ({ driver }) {
       const mappedSeasons = await resultsPath?.map(season => ({
         season: season.season,
         points: season.DriverStandings[0]?.points,
-        position: season.DriverStandings[0]?.position,
+        position: positionFormat({
+          position: season.DriverStandings[0]?.position
+        }),
         wins: season.DriverStandings[0]?.wins,
         constructors: season.DriverStandings[0]?.Constructors.map(
           constructor => ({
