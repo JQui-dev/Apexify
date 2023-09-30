@@ -1,4 +1,5 @@
-// NavBar displayed inline
+// NavBar displayed inline for pc
+
 .App {
     display: grid;
     grid-template-columns: 4rem 1fr;
@@ -25,13 +26,14 @@
 
         background: #000;
 
-        // Upper part of the nav
+        // Top of the nav
         & section {
             display: flex;
             flex-direction: column;
             gap: .5rem;
         }
 
+        // Every icon
         & a {
             display: grid;
             place-items: center;
@@ -59,7 +61,6 @@
             animation: navBtn 500ms ease-in-out infinite both;
             & svg { color: #a00; }
         }
-        & a:active svg { transform: scale(1.1); }
     }
 
     // Info screen
@@ -67,7 +68,7 @@
         overflow-y: auto;
         padding: .75rem;
 
-        background: #EEE;
+        background: #DDD;
 
         .navMobile { display: none; }
     }
@@ -89,20 +90,20 @@
         flex-direction: column;
 
         & nav {
-            flex-direction: row; // <- column
-
-            width: 100%; // new
-            height: 4rem; // new
-    
             // Fixed to the bottom
             position: absolute;
             bottom: 0;
 
+            flex-direction: row; // <- column
+
+            width: 100%;
+            height: 4rem;
+
             border-top: .2rem solid #a00;
     
-            & section { flex-direction: row; } // column
+            & section { flex-direction: row; } // <- column
     
-            & a { width: 3.5rem; } // 100% 
+            & a { width: 3.5rem; } // <- 100% 
         }
     
         // Info screen

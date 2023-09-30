@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react'
 
 import { fetchAny } from './../services/fetchAny'
+import { dateFormat, timeFormat } from '../services/formatData'
 
 export function useCalendar ({ year }) {
   const [loading, setLoading] = useState(true)
@@ -21,33 +22,33 @@ export function useCalendar ({ year }) {
           const sessionData = [
             {
               type: 'FP1',
-              date: race?.FirstPractice?.date,
-              time: race?.FirstPractice?.time
+              date: dateFormat({ dateToFormat: race?.FirstPractice?.date }),
+              time: timeFormat({ timeToFormat: race?.FirstPractice?.time })
             },
             {
               type: 'FP2',
-              date: race?.SecondPractice?.date,
-              time: race?.SecondPractice?.time
+              date: dateFormat({ dateToFormat: race?.SecondPractice?.date }),
+              time: timeFormat({ timeToFormat: race?.SecondPractice?.time })
             },
             {
               type: 'FP3',
-              date: race?.ThirdPractice?.date,
-              time: race?.ThirdPractice?.time
+              date: dateFormat({ dateToFormat: race?.ThirdPractice?.date }),
+              time: timeFormat({ timeToFormat: race?.ThirdPractice?.time })
             },
             {
               type: 'Qualifying',
-              date: race?.Qualifying?.date,
-              time: race?.Qualifying?.time
+              date: dateFormat({ dateToFormat: race?.Qualifying?.date }),
+              time: timeFormat({ timeToFormat: race?.Qualifying?.time })
             },
             {
               type: 'Sprint',
-              date: race?.Sprint?.date,
-              time: race?.Sprint?.time
+              date: dateFormat({ dateToFormat: race?.Sprint?.date }),
+              time: timeFormat({ timeToFormat: race?.Sprint?.time })
             },
             {
               type: 'Race',
-              date: race?.date,
-              time: race?.time
+              date: dateFormat({ dateToFormat: race?.date }),
+              time: timeFormat({ timeToFormat: race?.time })
             }
           ]
 

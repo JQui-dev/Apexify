@@ -56,8 +56,10 @@
                     display: grid;
                     place-items: center;
 
-                    & h5 {}
-                    & h6 { font-weight: 400; }
+                    text-align: center;
+
+                    & h5 { font-weight: 700; font-size: .65rem; }
+                    & h6 { font-weight: 800; font-size: .75rem; }
                 }
             }
         }
