@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { useCalendar } from '../hooks/useCalendar'
-import { useNextRace } from '../hooks/useNextRace'
 
 import { FaSearch } from 'react-icons/fa'
 
@@ -12,7 +11,6 @@ import './Calendar.scss'
 function Calendar () {
   const [year, setYear] = useState()
   const { races, loading } = useCalendar({ year, setYear })
-  const { nextValid } = useNextRace()
 
   const handleSubmit = e => {
     e.preventDefault()
@@ -46,7 +44,7 @@ function Calendar () {
           </button>
         </form>
       </header>
-      <Races races={races} next={nextValid} />
+      <Races races={races} />
     </div>
   )
 }

@@ -13,6 +13,7 @@ export function useCalendar ({ year, setYear }) {
     const storedYear = window.localStorage.getItem('calendarYear')
     if (storedYear) {
       setYear(parseInt(storedYear))
+      fetchCalendar({ year })
     }
   }, [])
   // set year typed, and fetch it

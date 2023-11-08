@@ -1,7 +1,7 @@
 import { useFutureRace } from '../hooks/useFutureRace'
 import './PendingRace.scss'
 
-function PendingRace ({ info, next, children }) {
+function PendingRace ({ info, children }) {
   const { futureRace } = useFutureRace({ year: info.season, round: info.round })
   return (
     <div className='PendingRace'>

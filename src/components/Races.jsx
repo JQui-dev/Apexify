@@ -6,7 +6,7 @@ import PendingRace from './PendingRace'
 
 import './Races.scss'
 
-function Races ({ races, next }) {
+function Races ({ races }) {
   return (
     <div className='Races'>
       {races.map(race => (
@@ -19,7 +19,7 @@ function Races ({ races, next }) {
               </header>
             </DoneRace>
           ) : (
-            <PendingRace info={race} next={next}>
+            <PendingRace info={races}>
               <header>
                 <h2>{race.round}</h2>
                 <h3>{race.name}</h3>
