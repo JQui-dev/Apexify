@@ -1,78 +1,46 @@
 .Races {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    align-items: last baseline;
+
     gap: .5rem;
 
-    .race {
-        overflow: hidden;
+    .DoneRace, .PendingRace {
+        display: grid;
+        grid-template-rows: auto 3fr 2.5rem;
+        gap: 1px;
 
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
+        border: .5rem solid #fff;
+        border-left: 0;
+        border-radius: 5px;
 
-        border-radius: .25rem;
+        box-shadow: 1px -1px #000a;
 
-        .main {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            gap: .25rem;
-            padding: .5rem .75rem;
-
-            color: #fff;
-            background: #000;
-
-            // Round number
-            & h2 { font-weight: 300; }
-            // Race title
-            & h3 { font-size: .8rem; }
-        }
-
-        .sessions {
-            display: flex;
-            flex-direction: column-reverse;
-
-            gap: 1px;
-
-            background: #aaa;
-
-            .session {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-
-                padding: .25rem .5rem;
-
+        color: #000;
+        background: #000;
+        
+        & header {
+            display: grid;
+            padding: .5rem;
+            padding-top: 0;
+    
+            background: #fff;
+            
+            & h2 {
+                font-size: 2rem;
+                font-weight: 900;
+    
                 color: #000;
-                background: #ddd;
-                
-                &:nth-child(odd) { background: #eee; }
-
-                & h4 { font-weight: 800; }
-
-                & aside {
-                    display: grid;
-                    place-items: center;
-
-                    text-align: center;
-
-                    & h5 { font-weight: 700; font-size: .65rem; }
-                    & h6 { font-weight: 800; font-size: .75rem; }
-                }
+                transition: 400ms ease-in-out;
             }
-        }
-    }
-    .next {
-        background: #a00;
-
-        .main {
-            & h2, h3 { color: #a00; font-weight: 900; }
-        }
-
-        .sessions {
-            background: #a00;
+            & h3 {
+                text-align: left;
+                font-size: .8rem;
+                font-weight: 600;
+                
+                color: #555;
+                transition: 100ms;
+            }
         }
     }
 }

@@ -3,12 +3,24 @@ import { useCallback, useEffect, useState } from 'react'
 import { fetchAny } from './../services/fetchAny'
 import { timeFormat } from '../services/formatData'
 
-export function useCalendar ({ year }) {
+export function useCalendar ({ year, setYear }) {
   const [loading, setLoading] = useState(true)
   const [races, setRaces] = useState([])
 
+  // Local storage to save the last year typed
+  // get last year
   useEffect(() => {
-    fetchCalendar({ year })
+    const storedYear = window.localStorage.getItem('calendarYear')
+    if (storedYear) {
+      setYear(parseInt(storedYear))
+    }
+  }, [])
+  // set year typed, and fetch it
+  useEffect(() => {
+    if (year) {
+      window.localStorage.setItem('calendarYear', year)
+      fetchCalendar({ year })
+    }
   }, [year])
 
   const fetchCalendar = useCallback(
@@ -65,9 +77,17 @@ export function useCalendar ({ year }) {
             return dateA - dateB
           })
 
+          const isFinished = () => {
+            const myDate = new Date()
+            const raceDate = new Date(race.date)
+            if (raceDate - myDate < 0) return true
+            return false
+          }
+
           return {
             season: race.season,
             round: race.round,
+            isFinished: isFinished(),
             name: race.raceName,
             cID: race.Circuit.circuitId,
             cName: race.Circuit.circuitName,

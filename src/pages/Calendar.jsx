@@ -11,7 +11,7 @@ import './Calendar.scss'
 
 function Calendar () {
   const [year, setYear] = useState()
-  const { races, loading } = useCalendar({ year })
+  const { races, loading } = useCalendar({ year, setYear })
   const { nextValid } = useNextRace()
 
   const handleSubmit = e => {
@@ -30,15 +30,18 @@ function Calendar () {
     e.target[0].value = ''
   }
 
-  if (loading) return <Loader what='Races' />
+  if (loading) return <Loader />
 
   return (
     <div className='Calendar'>
       <header>
-        <h1>{races[0]?.season}</h1>
+        <section className='title'>
+          <h1>{races[0]?.season}</h1>
+          <h2>SEASON</h2>
+        </section>
         <form onSubmit={e => handleSubmit(e)}>
           <input type='text' required placeholder='2021, 1950...' />
-          <button type='submit'>
+          <button type='submit' className='send'>
             <FaSearch />
           </button>
         </form>
