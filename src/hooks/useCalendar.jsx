@@ -13,15 +13,14 @@ export function useCalendar ({ year, setYear }) {
     const storedYear = window.localStorage.getItem('calendarYear')
     if (storedYear) {
       setYear(parseInt(storedYear))
-      fetchCalendar({ year })
     }
   }, [])
   // set year typed, and fetch it
   useEffect(() => {
     if (year) {
       window.localStorage.setItem('calendarYear', year)
-      fetchCalendar({ year })
     }
+    fetchCalendar({ year })
   }, [year])
 
   const fetchCalendar = useCallback(

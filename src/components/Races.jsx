@@ -19,7 +19,7 @@ function Races ({ races }) {
               </header>
             </DoneRace>
           ) : (
-            <PendingRace info={races}>
+            <PendingRace info={race}>
               <header>
                 <h2>{race.round}</h2>
                 <h3>{race.name}</h3>
