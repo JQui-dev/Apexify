@@ -3,92 +3,83 @@
     gap: 1px;
 
     overflow: hidden;
+    
+    border-top-right-radius: 10px;
+    border-right: 2.5px solid #a00;
 
-    // To avoid bug with the width in mobile
-    @media (min-width: 300px) { width: 100%; }
-
-    border-radius: .5rem;
-
-    background: #aaa;
-
-    .driver {
+    .titles {
         display: grid;
         place-items: center;
+        grid-template-columns: 1fr 6fr 2fr;
 
-        grid-template-columns: repeat(3, 1fr);
+        padding: .5rem 0;
 
-        gap: 1rem;
-        padding: 1rem .75rem;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
 
-        color: #000;
-        &:nth-child(even) { background: #ddd; }
-        &:nth-child(odd) { background: #ccc; }
-        
-        .name {
-            overflow: hidden;
+        color: #fff;
+        background: #a00;
 
-            display: flex;
-            align-items: center;
+        & h6, h4, h5 { font-size: .75rem; }
+    }
 
-            width: 100%;
+    .drivers {
+        display: grid;
+        gap: 1px;
 
-            gap: .5rem;
+        border: .5rem solid #fff;
+        border-top: 0;
+        border-bottom: 0;
 
-            .pos {
-                display: grid;
-                place-items: center;
-                
-                width: 2rem;
+        background: #666;
 
-                font-weight: 300;
-            }
+        .driver {
+            display: grid;
+            place-items: center;
+            grid-template-columns: 1fr 6fr 2fr;
+
+            padding: .5rem 0;
+
+            background: #fff;
 
             & a {
                 color: #000;
+                transition: 300ms;
                 &:hover { color: #a00; }
-                .driverNameMobile { display: none; }
-            }
-        }
-        .constructor {
-            display: grid;
-            place-items: center;
 
-            color: #000;
-        }
-        .time {
-            display: grid;
-            place-items: center;
+                .name {
+                    display: flex;
+                    align-items: center;
 
-            text-align: center;
+                    gap: .25rem;
 
-            width: 5rem;
-            font-weight: 500;
-        }
-    }
-
-    // Two Columns in mobile
-    @media (max-width: 600px) { 
-    .titles, .driver {
-        grid-template-columns: repeat(2, 1fr); 
-         
-        .teamTitle, .driverName {
-            display: none;
-            }
-        }
-        .driver {
-            .name {
-                & a {
-                    max-width: 125px;
-                    white-space: nowrap;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                    .driverNameMobile {
-                        display: block;
-                        font-weight: 600;
+                    & h3 {
+                        font-size: 1.25rem;
+                        font-weight: 400;
+                    }
+                    & h2 {
+                        font-size: 1.25rem;
+                        font-weight: 800;
                     }
                 }
+                .mobileName { display: none; }
+            }
+            .state {
+                font-size: .8rem;
+                font-weight: 500;
+            }
         }
-        .constructor { display: none; }
     }
+
+    @media (max-width: 400px) {
+        .titles { grid-template-columns: 1fr 3fr 2fr;   }
+        .drivers {
+            .driver {
+                grid-template-columns: 1fr 3fr 2fr;
+                
+                .wideName { display: none; }
+                .mobileName { display: flex; font-weight: 800; }
+            }
+        }
     }
 }

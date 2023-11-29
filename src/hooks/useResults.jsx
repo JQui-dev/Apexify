@@ -30,10 +30,10 @@ export function useResults ({ year, round }) {
         round: dataPath?.round,
         circuit: dataPath?.Circuit?.circuitName,
         circuitID: dataPath?.Circuit?.circuitId,
-        circuitLocation: `${dataPath?.Circuit?.Location?.locality}, ${dataPath?.Circuit?.Location?.country}`,
+        city: dataPath?.Circuit?.Location?.locality,
+        country: dataPath?.Circuit?.Location?.country,
+        location: `${dataPath?.Circuit?.Location?.locality}, ${dataPath?.Circuit?.Location?.country}`,
         results: dataPath?.Results?.map(res => ({
-          notFinished:
-            res.positionText === 'R' ? (res.laps > 0 ? 'DNF' : 'DNS') : '',
           position: res.position,
           grid: res.grid,
           points: res.points,
@@ -48,10 +48,15 @@ export function useResults ({ year, round }) {
           FLAvSpeedUnit: res.FastestLap?.AverageSpeed?.unit,
           id: res.Driver?.driverId,
           code: res.Driver?.code,
+          fullName: `${res.Driver?.givenName} ${res.Driver?.familyName}`,
+          shortName: `${res.Driver?.givenName.charAt(0)}. ${
+            res.Driver?.familyName
+          }`,
           givenName: res.Driver?.givenName,
           familyName: res.Driver?.familyName,
           constructorID: res.Constructor?.constructorId,
-          constructorName: res.Constructor?.name
+          constructorName: res.Constructor?.name,
+          state: res.Time?.time || res.status
         }))
       }
       setRace(newData)

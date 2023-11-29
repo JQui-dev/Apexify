@@ -1,5 +1,4 @@
 // NavBar displayed inline for pc
-
 .App {
     display: grid;
     grid-template-columns: 4rem 1fr;
@@ -70,7 +69,7 @@
 
         background: #fff;
 
-        .navMobile { display: none; }
+        .hideNavMobile { display: none; }
     }
 }
 
@@ -108,7 +107,8 @@
     
         // Info screen
         .screen { 
-            .navMobile {
+            .hideNavMobile {
+                // it's behind the actual navBar component
                 display: block;
                 width: 100%;
                 height: 4rem;

@@ -1,5 +1,6 @@
 .Calendar {
     display: grid;
+    padding-top: .5rem;
     gap: 1rem;
 
     & header {
@@ -64,4 +65,4 @@
     }
 
     // RACES COMPONENT
-}
+} 

@@ -1,82 +1,45 @@
-/* eslint-disable multiline-ternary */
+// MODULES
 import { useParams } from 'react-router-dom'
 
-import { FaLocationDot } from 'react-icons/fa6'
+// PAGES
+import Error from './../pages/Error'
 
+// COMPONENTS
 import Loader from './../components/Loader'
+import ResultTable from './../components/ResultTable'
+
+// HOOKS
 import { useResults } from '../hooks/useResults'
-import ResultTable from '../components/ResultTable'
 
-import { useFutureRace } from '../hooks/useFutureRace'
-import Counter from '../components/Counter'
-
+// STYLE
 import './Race.scss'
+import { FaLocationDot } from 'react-icons/fa6'
 
 function Race () {
   const { year, round } = useParams()
-
   const { race, loading, error } = useResults({ year, round })
-  const { futureRace } = useFutureRace({ year, round })
 
   if (loading) return <Loader />
-
-  if (error) {
-    return (
-      <div className='notRacedYet'>
-        <section className='infoSection'>
-          <div className='info'>
-            <h1>{year}</h1>
-            <h2>Round {round}</h2>
-            <h3>{race.name || futureRace.name}</h3>
-            <h4>
-              <FaLocationDot />
-              {race.circuitLocation || futureRace.circuitLocation}
-            </h4>
-          </div>
-          {
-            // If it's not the current year it doesnt show the map image
-            (race?.current || futureRace?.current) && (
-              <img
-                src={`/assets/map/${
-                  race?.circuitID || futureRace?.circuitID
-                }.avif`}
-                alt={`${race?.name || futureRace?.name} map`}
-              />
-            )
-          }
-        </section>
-        <section className='dataSection'>
-          <Counter date={futureRace?.date} time={futureRace?.time} />
-        </section>
-      </div>
-    )
-  }
+  if (error) return <Error />
 
   return (
     <div className='Race'>
-      <section className='infoSection'>
-        <div className='info'>
-          <h1>{year}</h1>
-          <h2>Round {round}</h2>
-          <h3>{race.name || futureRace.name}</h3>
-          <h4>
+      <section className='raceInfo'>
+        <div className='main'>
+          <h2>{race.season}</h2>
+          <h1>{race.name}</h1>
+          <h5 className='location'>
             <FaLocationDot />
-            {race.circuitLocation || futureRace.circuitLocation}
-          </h4>
+            {race.location}
+          </h5>
         </div>
-        {
-          // If it's not the current year it doesnt show the map image
-          (race?.current || futureRace?.current) && (
-            <img
-              src={`/assets/map/${
-                race?.circuitID || futureRace?.circuitID
-              }.avif`}
-              alt={`${race?.name || futureRace?.name} map`}
-            />
-          )
-        }
+        <div className='map'>
+          <img src={`/assets/map/${race.circuitID}.avif`} alt='' />
+        </div>
       </section>
-      <ResultTable results={race.results} />
+      <div className='results'>
+        <ResultTable results={race.results} />
+      </div>
     </div>
   )
 }

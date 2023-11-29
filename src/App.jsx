@@ -24,22 +24,22 @@ function App () {
     <div className='App'>
       <BrowserRouter>
         <NavBar />
-        <div className='screen'>
+        <section className='screen'>
           <Routes>
             <Route path='/' element={<Main />} />
             <Route path='*' element={<Error />} />
 
+            {/* MAIN PAGES */}
             <Route path='/calendar' element={<Calendar />} />
-            <Route path='r/:year/:round' element={<Race />} />
-
             <Route path='/standings/:stand' element={<Standings />} />
-
-            <Route path='/driver/:driver' element={<Driver />} />
-
             <Route path='/champions' element={<Champions />} />
+
+            {/* SUB-PAGES */}
+            <Route path='r/:year/:round' element={<Race />} />
+            <Route path='/driver/:driver' element={<Driver />} />
           </Routes>
-          <div className='navMobile' />
-        </div>
+          <div className='hideNavMobile' />
+        </section>
       </BrowserRouter>
     </div>
   )

@@ -1,11 +1,13 @@
+// MODULES
 import { useState } from 'react'
 import { useCalendar } from '../hooks/useCalendar'
-
 import { FaSearch } from 'react-icons/fa'
 
+// COMPONENTS
 import Races from '../components/Races'
 import Loader from '../components/Loader'
 
+// STYLE
 import './Calendar.scss'
 
 function Calendar () {
@@ -14,17 +16,11 @@ function Calendar () {
 
   const handleSubmit = e => {
     e.preventDefault()
-
-    const newYear = e.target[0].value
-    const intYear = parseInt(newYear)
+    const inputYear = parseInt(e.target[0].value)
     const thisYear = new Date().getFullYear()
 
-    // FETCH FULL CALENDAR
     // Check the range of the year to fetch the calendar
-    if (intYear >= 1950 && intYear <= thisYear) {
-      if (newYear === 'current') return setYear(thisYear)
-      return setYear(newYear)
-    }
+    inputYear >= 1950 && inputYear <= thisYear && setYear(inputYear)
     e.target[0].value = ''
   }
 
