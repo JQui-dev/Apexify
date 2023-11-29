@@ -88,23 +88,16 @@
                         }
                     }
                     .mobileName { display: none; }
+                    @media (max-width: 550px) {
+                        .wideName { display: none; }
+                        .mobileName { display: flex; font-weight: 800; }
+                    }
+
                 }
             }
             & h5 {
                 font-size: .8rem;
                 font-weight: 500;
-            }
-        }
-    }
-
-    @media (max-width: 400px) {
-        .titles { grid-template-columns: 1fr 1fr;   }
-        .drivers {
-            .driver {
-                grid-template-columns: 1fr 1fr;
-                
-                .wideName { display: none; }
-                .mobileName { display: flex; font-weight: 800; }
             }
         }
     }
