@@ -28,6 +28,9 @@
             width: 100%;
             padding-left: 1rem;
         }
+        & h5 {
+            text-align: end;
+        }
     }
 
     .drivers {
@@ -90,16 +93,15 @@
             & h5 {
                 font-size: .8rem;
                 font-weight: 500;
-                text-align: center;
             }
         }
     }
 
     @media (max-width: 400px) {
-        .titles { grid-template-columns: 1fr 3fr 2fr;   }
+        .titles { grid-template-columns: 1fr 1fr;   }
         .drivers {
             .driver {
-                grid-template-columns: 1fr 3fr 2fr;
+                grid-template-columns: 1fr 1fr;
                 
                 .wideName { display: none; }
                 .mobileName { display: flex; font-weight: 800; }
