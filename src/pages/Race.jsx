@@ -14,16 +14,18 @@ import { useResults } from '../hooks/useResults'
 // STYLE
 import './Race.scss'
 import { FaLocationDot } from 'react-icons/fa6'
+import { useState } from 'react'
 
 function Race () {
   const { year, round } = useParams()
   const { race, loading, error } = useResults({ year, round })
+  const [map, setMap] = useState(false)
 
   if (loading) return <Loader />
   if (error) return <Error />
 
   return (
-    <div className='Race'>
+    <div className={`Race ${map && 'dontScroll'}`}>
       <section className='raceInfo'>
         <div className='main'>
           <h2>{race.season}</h2>
@@ -33,9 +35,15 @@ function Race () {
             {race.location}
           </h5>
         </div>
-        <div className='map'>
-          <img src={`/assets/map/${race.circuitID}.avif`} alt='' />
-        </div>
+        {race.current && (
+          <div
+            className={`map ${map && 'big'}`}
+            onClick={() => setMap(!map)}
+          >
+            <img src={`/assets/map/${race.circuitID}.avif`} />
+            <h4>{race.circuit}</h4>
+          </div>
+        )}
       </section>
       <div className='results'>
         <ResultTable results={race.results} />

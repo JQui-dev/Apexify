@@ -9,13 +9,13 @@ function ResultTable ({ results }) {
       <div className='titles'>
         <h6>POS</h6>
         <h4>DRIVER</h4>
-        <h5>TIME</h5>
+        <h5>STATUS</h5>
       </div>
 
       <div className='drivers'>
         {results.map((driver, key) => (
           <div className='driver' key={`${key}${driver.code}`}>
-            <h2 className='position'>{driver.position}</h2>
+            <h4>{driver.position}</h4>
             <Link to={`/driver/${driver.id}`}>
               <div className='name wideName'>
                 <h3>{driver.givenName}</h3>
@@ -23,7 +23,7 @@ function ResultTable ({ results }) {
               </div>
               <h2 className='name mobileName'>{driver.code}</h2>
             </Link>
-            <h2 className='state'>{driver.state}</h2>
+            <h5>{driver.state}</h5>
           </div>
         ))}
       </div>
