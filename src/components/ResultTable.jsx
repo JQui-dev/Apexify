@@ -7,22 +7,26 @@ function ResultTable ({ results }) {
   return (
     <section className='Results'>
       <div className='titles'>
-        <h6>POS</h6>
-        <h4>DRIVER</h4>
+        <div className='main'>
+          <h6>POS</h6>
+          <h4>DRIVER</h4>
+        </div>
         <h5>STATUS</h5>
       </div>
 
       <div className='drivers'>
         {results.map((driver, key) => (
           <div className='driver' key={`${key}${driver.code}`}>
-            <h4>{driver.position}</h4>
-            <Link to={`/driver/${driver.id}`}>
-              <div className='name wideName'>
-                <h3>{driver.givenName}</h3>
-                <h2>{driver.familyName}</h2>
-              </div>
-              <h2 className='name mobileName'>{driver.code}</h2>
-            </Link>
+            <div className='main'>
+              <h4>{driver.position}</h4>
+              <Link to={`/driver/${driver.id}`}>
+                <div className='name wideName'>
+                  <h3>{driver.givenName}</h3>
+                  <h2>{driver.familyName}</h2>
+                </div>
+                <h2 className='name mobileName'>{driver.code}</h2>
+              </Link>
+            </div>
             <h5>{driver.state}</h5>
           </div>
         ))}
