@@ -1,9 +1,12 @@
+// MODULES
+import { useState } from 'react'
+
 // COMPONENTS
 import NavBtn from './NavBtn'
 
 // STYLE
-import './style/NavBar.scss'
 import {
+  IoIosMenu,
   IoIosCalendar,
   IoMdPodium,
   IoMdTrophy,
@@ -18,13 +21,15 @@ const links = [
 ]
 
 function NavBar () {
+  const [nav, setNav] = useState(false)
   return (
     <nav className='NavBar'>
       <div className='title'>
         <img src='/assets/logo.webp' alt='' />
         <h1>APEXIFY</h1>
+        <IoIosMenu onClick={() => setNav(!nav)} />
       </div>
-      <div className='links'>
+      <div className={`links ${nav && 'activeNav'}`} onClick={() => setNav(false)}>
         {links.map(i => (
           <NavBtn key={i.id} type={i.id} link={i.url} icon={i.icon} />
         ))}
