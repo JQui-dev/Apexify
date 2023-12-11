@@ -2,16 +2,11 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 // PAGES
-import Main from './pages/Main'
 import Error from './pages/Error'
-
 import Calendar from './pages/Calendar'
-import Race from './pages/Race'
-
-import Standings from './pages/Standings'
-import Driver from './pages/Driver'
-
+import Standing from './pages/Standing'
 import Champions from './pages/Champions'
+import About from './pages/About'
 
 // COMPONENTS
 import NavBar from './components/NavBar'
@@ -24,22 +19,16 @@ function App () {
     <div className='App'>
       <BrowserRouter>
         <NavBar />
-        <section className='screen'>
+        <div className='screen'>
           <Routes>
-            <Route path='/' element={<Main />} />
+            <Route path='/' element={<Calendar />} />
             <Route path='*' element={<Error />} />
 
-            {/* MAIN PAGES */}
-            <Route path='/calendar' element={<Calendar />} />
-            <Route path='/standings/:stand' element={<Standings />} />
+            <Route path='/standing/:id' element={<Standing />} />
             <Route path='/champions' element={<Champions />} />
-
-            {/* SUB-PAGES */}
-            <Route path='r/:year/:round' element={<Race />} />
-            <Route path='/driver/:driver' element={<Driver />} />
+            <Route path='/about' element={<About />} />
           </Routes>
-          <div className='hideNavMobile' />
-        </section>
+        </div>
       </BrowserRouter>
     </div>
   )

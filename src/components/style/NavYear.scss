@@ -1,0 +1,44 @@
+.NavYear {
+    display: grid;
+    gap: 0.2rem;
+
+    overflow-y: scroll;
+    width: 7rem;
+    max-height: calc(100svh - 1rem);
+
+    & button {
+        font-size: 1.5rem;
+        border-radius: 0.2rem;
+        border: none;
+        outline: none;
+
+        cursor: pointer;
+
+        color: #fff;
+        background: #111;
+    }
+    .active {
+        color: #000;
+        background: #ccc;
+    }
+
+    // Hide scrollbar in years
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    @media (max-width: 570px) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        overflow-x: scroll;
+        width: 100%;
+        max-height: 3rem;
+        
+        & button {
+            padding: 0 1rem;
+        }
+    }
+}

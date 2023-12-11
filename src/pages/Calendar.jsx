@@ -1,48 +1,55 @@
 // MODULES
 import { useState } from 'react'
-import { useCalendar } from '../hooks/useCalendar'
-import { FaSearch } from 'react-icons/fa'
 
 // COMPONENTS
-import Races from '../components/Races'
-import Loader from '../components/Loader'
+import ChampCard from '../components/ChampCard'
+import NavYear from '../components/NavYear'
+
+// HOOKS
+import { useChamp } from '../hooks/useChamp'
+import { useCalendar } from '../hooks/useCalendar'
+
+// SERVICES
+import { getYears } from '../services/getYears'
 
 // STYLE
-import './Calendar.scss'
+import './style/Calendar.scss'
 
 function Calendar () {
-  const [year, setYear] = useState()
-  const { races, loading } = useCalendar({ year, setYear })
+  const [year, setYear] = useState('2023')
+  const { years } = getYears()
+  const { champ: cDriver } = useChamp({ year, stand: 'driver' })
+  const { champ: cTeam } = useChamp({ year, stand: 'team' })
+  const { races } = useCalendar({ year })
 
-  const handleSubmit = e => {
-    e.preventDefault()
-    const inputYear = parseInt(e.target[0].value)
-    const thisYear = new Date().getFullYear()
-
-    // Check the range of the year to fetch the calendar
-    inputYear >= 1950 && inputYear <= thisYear && setYear(inputYear)
-    e.target[0].value = ''
+  if (races && cDriver && cTeam) {
+    return (
+      <div className='Calendar'>
+        <NavYear years={years} year={year} setYear={setYear} />
+        <div className='right'>
+          {cDriver && cTeam && (
+            <div className='champs'>
+              <ChampCard title='Driver' champ={cDriver} year={year} />
+              <ChampCard title='Constructor' champ={cTeam} year={year} />
+            </div>
+          )}
+          <div className='races'>
+            {races &&
+              races.map(r => (
+                <div className='race' key={`${r.year}_${r.round}`}>
+                  <h3>
+                    {r.round}. {(r?.raceName).replace('Grand Prix', 'GP')}
+                  </h3>
+                  <h4>
+                    {r.date.split('-')[2]}/{r.date.split('-')[1]}
+                  </h4>
+                </div>
+              ))}
+          </div>
+        </div>
+      </div>
+    )
   }
-
-  if (loading) return <Loader />
-
-  return (
-    <div className='Calendar'>
-      <header>
-        <section className='title'>
-          <h1>{races[0]?.season}</h1>
-          <h2>SEASON</h2>
-        </section>
-        <form onSubmit={e => handleSubmit(e)}>
-          <input type='text' required placeholder='2021, 1950...' />
-          <button type='submit' className='send'>
-            <FaSearch />
-          </button>
-        </form>
-      </header>
-      <Races races={races} />
-    </div>
-  )
 }
 
 export default Calendar
