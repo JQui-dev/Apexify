@@ -22,7 +22,12 @@
 
             gap: 0.25rem;
 
-            height: 100%;
+            overflow-y: auto;
+            height: calc(100dvh - 100px - 1rem);
+
+            @media (max-width: 840px) {
+                height: calc(100dvh - 200px - 1.25rem);
+            }
 
             // Hide scrollbar in years
             scrollbar-width: none;
@@ -66,7 +71,6 @@
 
             .races {
                 height: calc(100dvh - 19.25rem);
-                overflow-y: scroll;
             }
         }
     }
