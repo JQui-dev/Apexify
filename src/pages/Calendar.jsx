@@ -40,7 +40,12 @@ function Calendar () {
           <div className='champsWrap'>
             <div className='champs'>
               <ChampCard title='Driver' champ={cDriver[0]} year={year} />
-              <ChampCard title='Constructor' champ={cTeam[0]} year={year} />
+              {
+                // Team info only available for 1958+
+                parseInt(year) >= 1958 && (
+                  <ChampCard title='Constructor' champ={cTeam[0]} year={year} />
+                )
+              }
             </div>
             <Link to={`/${year}/driver/standing`}>
               <IoMdReturnRight />

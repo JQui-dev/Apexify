@@ -23,9 +23,21 @@ function Standing () {
         <NavLink to={`/${year}/driver/standing`}>
           <IoMdPodium /> <h4>{year} Drivers' Standing</h4>
         </NavLink>
-        <NavLink to={`/${year}/team/standing`}>
-          <IoMdPodium /> <h4>{year} Constructors' Standing</h4>
-        </NavLink>
+        {
+          // using anon function to verify year
+          (() => {
+            const isCurrentYear = year === 'current'
+            const isAfter1958 = parseInt(year) >= 1958
+
+            if (isCurrentYear || isAfter1958) {
+              return (
+                <NavLink to={`/${year}/team/standing`}>
+                  <IoMdPodium /> <h4>{year} Constructors' Standing</h4>
+                </NavLink>
+              )
+            }
+          })()
+        }
       </div>
       {id === 'driver' && <StandTable array={standingArray} type='driver' />}
       {id === 'team' && <StandTable array={standingArray} type='team' />}
