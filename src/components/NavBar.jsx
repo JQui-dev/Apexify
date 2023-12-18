@@ -15,7 +15,7 @@ import {
 
 const links = [
   { id: 'calendar', url: '/', icon: <IoIosCalendar /> },
-  { id: 'standings', url: '/standing/driver', icon: <IoMdPodium /> },
+  { id: 'standings', url: '/current/driver/standing', icon: <IoMdPodium /> },
   { id: 'champions', url: '/champions', icon: <IoMdTrophy /> },
   { id: 'about', url: '/about', icon: <IoMdInformationCircle /> }
 ]
@@ -29,7 +29,10 @@ function NavBar () {
         <h1>APEXIFY</h1>
         <IoIosMenu onClick={() => setNav(!nav)} />
       </div>
-      <div className={`links ${nav && 'activeNav'}`} onClick={() => setNav(false)}>
+      <div
+        className={`links ${nav && 'activeNav'}`}
+        onClick={() => setNav(false)}
+      >
         {links.map(i => (
           <NavBtn key={i.id} type={i.id} link={i.url} icon={i.icon} />
         ))}

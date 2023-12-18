@@ -18,6 +18,7 @@
 
         .races {
             display: flex;
+            align-content: baseline;
             flex-wrap: wrap;
 
             gap: 0.25rem;
@@ -42,7 +43,7 @@
                 align-items: center;
                 justify-content: space-between;
 
-                padding: 0.5rem;
+                padding: 0.75rem;
 
                 min-width: 270px;
 

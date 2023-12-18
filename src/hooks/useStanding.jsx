@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 
-export const useChamp = ({ year, stand }) => {
-  const [champ, setChamp] = useState()
+export const useStanding = ({ year, stand, pos }) => {
+  const [standingArray, setStandingArray] = useState()
 
   useEffect(() => {
     const what = stand === 'team' ? 'constructorStandings' : 'driverStandings'
@@ -9,15 +9,16 @@ export const useChamp = ({ year, stand }) => {
     const fetchIt = async () => {
       try {
         const res = await fetch(
-          `https://ergast.com/api/f1/${year}/${what}/1.json`
+          `https://ergast.com/api/f1/${year}/${what}${pos && `/${pos}`}.json`
         )
         if (res.ok) {
           const resJson = await res.json()
           const listPath = resJson.MRData.StandingsTable.StandingsLists[0]
           if (stand === 'driver') {
-            setChamp(listPath.DriverStandings[0])
+            setStandingArray(listPath.DriverStandings)
+            console.log(listPath.DriverStandings)
           } else if (stand === 'team') {
-            setChamp(listPath.ConstructorStandings[0])
+            setStandingArray(listPath.ConstructorStandings)
           }
         } else {
           console.error('Error fetching')
@@ -27,7 +28,7 @@ export const useChamp = ({ year, stand }) => {
       }
     }
     fetchIt()
-  }, [year])
+  }, [year, stand])
 
-  return { champ }
+  return { standingArray }
 }

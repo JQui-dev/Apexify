@@ -1,0 +1,103 @@
+.Standing {
+    display: grid;
+    gap: 0.5rem;
+
+    .buttons {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+        gap: 0.5rem;
+
+        & a {
+            padding: 0.5rem 0.75rem;
+
+            border-radius: 0.25rem;
+            background: #800;
+
+            &:hover {
+                background: #a00;
+            }
+        }
+        .active {
+            border: none;
+            background: #c00;
+
+            &:hover {
+                background: #c00;
+                cursor: auto;
+            }
+        }
+    }
+    .StandTable {
+        display: grid;
+        gap: 0.2rem;
+
+        border-radius: 0.5rem;
+
+        overflow: auto;
+        max-height: calc(100svh - 4rem);
+        @media (max-width: 735px) {
+            max-height: calc(100svh - 6.5rem);
+        }
+        @media (max-width: 570px) {
+            max-height: calc(100svh - 10rem);
+        }
+
+        // Hide scrollbar in years
+        scrollbar-width: none;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            align-items: center;
+
+            @media (max-width: 570px) {
+                grid-template-columns: 2fr 1fr;
+
+                .middle {
+                    display: none;
+                }
+            }
+
+            padding: 0.5rem;
+            padding-right: 1rem;
+            border-radius: 0.25rem;
+
+            color: #222;
+            background: #fff;
+
+            .left {
+                display: grid;
+                grid-template-columns: 1.25rem auto;
+                align-items: center;
+                gap: 0.5rem;
+
+                & h2 {
+                    display: grid;
+                    place-items: center;
+                }
+            }
+            .middle {
+                text-align: center;
+            }
+            .points {
+                width: 100%;
+                text-align: end;
+            }
+        }
+        .title {
+            color: #000;
+
+            & h2 {
+            }
+            & h3 {
+            }
+            & h4 {
+                width: 100%;
+                text-align: end;
+            }
+        }
+    }
+}

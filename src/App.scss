@@ -12,7 +12,7 @@
         display: grid;
         grid-template-rows: auto 1fr;
 
-        max-height: 100dvh;
+        height: 100dvh;
 
         color: #fff;
         background: #000;
@@ -70,6 +70,7 @@
         .NavBar {
             grid-template-rows: auto;
             grid-template-columns: 1fr auto;
+            height: auto;
 
             .title {
                 display: flex;

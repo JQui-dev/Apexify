@@ -24,7 +24,7 @@ function App () {
             <Route path='/' element={<Calendar />} />
             <Route path='*' element={<Error />} />
 
-            <Route path='/standing/:id' element={<Standing />} />
+            <Route path='/:year/:id/standing' element={<Standing />} />
             <Route path='/champions' element={<Champions />} />
             <Route path='/about' element={<About />} />
           </Routes>
