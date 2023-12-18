@@ -1,7 +1,7 @@
 .Calendar {
     display: grid;
     grid-template-columns: auto 1fr;
-    
+
     // NavYear
 
     .right {
@@ -10,10 +10,60 @@
         gap: 0.5rem;
         padding-left: 0.5rem;
 
-        .champs {
+        .champsWrap {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
             gap: 0.5rem;
+
+            .champs {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+                gap: 0.5rem;
+            }
+
+            & a {
+                position: relative;
+                z-index: 1;
+
+                display: flex;
+                gap: 0.5rem;
+                align-items: center;
+
+                padding: 0.5rem;
+
+                border-radius: 0.5rem;
+
+                transition: all 0.3s;
+                overflow: hidden;
+
+                &:after {
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: #a00;
+                    z-index: -2;
+                }
+                &:before {
+                    content: "";
+                    position: absolute;
+                    z-index: -1;
+                    bottom: 0;
+                    left: 0;
+
+                    width: 0%;
+                    height: 100%;
+
+                    transition: all 0.3s;
+                    background: #c00;
+                }
+                &:hover {
+                    &:before {
+                        width: 100%;
+                    }
+                }
+            }
         }
 
         .races {
@@ -24,10 +74,10 @@
             gap: 0.25rem;
 
             overflow-y: auto;
-            height: calc(100dvh - 100px - 1rem);
+            height: calc(100dvh - 100px - 4rem);
 
             @media (max-width: 840px) {
-                height: calc(100dvh - 200px - 1.25rem);
+                height: calc(100dvh - 200px - 4rem);
             }
 
             // Hide scrollbar in years
@@ -61,7 +111,7 @@
             }
         }
     }
-    
+
     @media (max-width: 570px) {
         grid-template-columns: auto;
         grid-template-rows: auto 1fr;
@@ -71,7 +121,7 @@
             padding-left: 0;
 
             .races {
-                height: calc(100dvh - 19.25rem);
+                height: calc(100dvh - 22.2rem);
             }
         }
     }

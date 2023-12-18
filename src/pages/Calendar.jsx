@@ -1,5 +1,6 @@
 // MODULES
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 // COMPONENTS
 import ChampCard from '../components/ChampCard'
@@ -14,6 +15,7 @@ import { getYears } from '../services/getYears'
 
 // STYLE
 import './style/Calendar.scss'
+import { IoMdReturnRight } from 'react-icons/io'
 
 function Calendar () {
   const [year, setYear] = useState('2023')
@@ -35,9 +37,15 @@ function Calendar () {
       <div className='Calendar'>
         <NavYear years={years} year={year} setYear={setYear} />
         <div className='right'>
-          <div className='champs'>
-            <ChampCard title='Driver' champ={cDriver[0]} year={year} />
-            <ChampCard title='Constructor' champ={cTeam[0]} year={year} />
+          <div className='champsWrap'>
+            <div className='champs'>
+              <ChampCard title='Driver' champ={cDriver[0]} year={year} />
+              <ChampCard title='Constructor' champ={cTeam[0]} year={year} />
+            </div>
+            <Link to={`/${year}/driver/standing`}>
+              <IoMdReturnRight />
+              <h4>Full Standings</h4>
+            </Link>
           </div>
           <div className='races'>
             {races.map(r => (

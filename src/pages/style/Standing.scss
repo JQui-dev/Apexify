@@ -8,6 +8,12 @@
         gap: 0.5rem;
 
         & a {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+
+            text-transform: capitalize;
+
             padding: 0.5rem 0.75rem;
 
             border-radius: 0.25rem;
@@ -15,6 +21,12 @@
 
             &:hover {
                 background: #a00;
+            }
+
+            & svg {}
+            & h4 {
+                display: grid;
+                place-items: center;
             }
         }
         .active {
@@ -69,8 +81,7 @@
             background: #fff;
 
             .left {
-                display: grid;
-                grid-template-columns: 1.25rem auto;
+                display: flex;
                 align-items: center;
                 gap: 0.5rem;
 
