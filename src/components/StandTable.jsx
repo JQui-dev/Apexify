@@ -1,3 +1,4 @@
+// MODULES
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
@@ -7,6 +8,7 @@ function StandTable ({ array, type }) {
   useEffect(() => {
     if (type === 'driver') {
       const drivers = array?.map(driver => ({
+        id: driver.Driver.driverId,
         pos: driver.position,
         name: `${driver.Driver?.givenName} ${driver.Driver?.familyName}`,
         points: driver.points,
@@ -18,6 +20,7 @@ function StandTable ({ array, type }) {
       setNewArray(drivers)
     } else if (type === 'team') {
       const teams = array?.map(team => ({
+        id: team.Constructor?.constructorId,
         pos: team.position,
         name: team.Constructor?.name,
         points: team.points,
@@ -37,8 +40,16 @@ function StandTable ({ array, type }) {
       {newArray?.map(i => (
         <div className='row' key={`${i.pos}_${i.name}`}>
           <section className='left'>
-            <h2>{i.pos}</h2>
-            <h3>{i.name}</h3>
+            {type === 'driver' && (
+              <Link to={`/driver/${i.id}`}>
+                <h2>{i.name}</h2>
+              </Link>
+            )}
+            {type === 'team' && (
+              <Link to={`/team/${i.id}`}>
+                <h2>{i.name}</h2>
+              </Link>
+            )}
           </section>
           <section className='middle'>
             {type === 'driver' && (

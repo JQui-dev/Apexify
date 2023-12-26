@@ -92,6 +92,10 @@
             }
             .middle {
                 text-align: center;
+
+                &:hover {
+                    color: #800;
+                }
             }
             .points {
                 width: 100%;

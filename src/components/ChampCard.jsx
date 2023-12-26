@@ -1,3 +1,6 @@
+// MODULES
+import { Link } from 'react-router-dom'
+
 // STYLE
 import './style/ChampCard.scss'
 
@@ -10,7 +13,15 @@ function ChampCard ({ year, title, champ }) {
   return (
     <div className='ChampCard'>
       <div className='info'>
-        <h1>{name}</h1>
+        <Link
+          to={
+            title === 'Driver'
+              ? `/driver/${champ.Driver.driverId}`
+              : `/team/${champ.Constructor.constructorId}`
+          }
+        >
+          <h1>{name}</h1>
+        </Link>
         <h2>
           {year} {title}'s Champion
         </h2>

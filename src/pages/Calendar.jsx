@@ -47,7 +47,7 @@ function Calendar () {
                 )
               }
             </div>
-            <Link to={`/${year}/driver/standing`}>
+            <Link to={`/${year}/driver/standing`} className='fStand'>
               <IoMdReturnRight />
               <h4>Full Standings</h4>
             </Link>

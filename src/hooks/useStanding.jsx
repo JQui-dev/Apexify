@@ -16,7 +16,6 @@ export const useStanding = ({ year, stand, pos }) => {
           const listPath = resJson.MRData.StandingsTable.StandingsLists[0]
           if (stand === 'driver') {
             setStandingArray(listPath.DriverStandings)
-            console.log(listPath.DriverStandings)
           } else if (stand === 'team') {
             setStandingArray(listPath.ConstructorStandings)
           }

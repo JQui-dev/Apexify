@@ -18,9 +18,17 @@
                 display: grid;
                 grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
                 gap: 0.5rem;
+
+                & a {
+                    display: flex;
+
+                    & h1 {
+                        width: 100%;
+                    }
+                }
             }
 
-            & a {
+            .fStand {
                 position: relative;
                 z-index: 1;
 
