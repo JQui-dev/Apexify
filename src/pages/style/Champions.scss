@@ -1,6 +1,21 @@
 .Champions {
-    height: calc(100svh - 1rem);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    height: calc(100svh - 1.25rem);
     overflow-y: auto;
+
+    .info {
+        display: grid;
+        place-items: center;
+        grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+        & h1 {
+            font-size: 1.6rem;
+        }
+        & h3 {
+            font-size: 1rem;
+        }
+    }
 
     @media (max-width: 570px) {
         max-height: calc(100svh - 4.75rem);
@@ -8,7 +23,7 @@
 
     .table {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
         gap: 0.25rem;
 
         .row {

@@ -7,7 +7,7 @@ export const useChampions = ({ page }) => {
     const fetchChampions = async () => {
       try {
         const res = await fetch(
-          `http://ergast.com/api/f1/driverstandings/1/drivers.json?limit=30&offset=${
+          `https://ergast.com/api/f1/driverstandings/1/drivers.json?limit=30&offset=${
             page * 30
           }`
         )
