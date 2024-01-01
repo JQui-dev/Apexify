@@ -1,0 +1,33 @@
+.Champions {
+    height: calc(100svh - 1rem);
+    overflow-y: auto;
+
+    @media (max-width: 570px) {
+        max-height: calc(100svh - 4.75rem);
+    }
+
+    .table {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+        gap: 0.25rem;
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 0.5rem;
+
+            border-radius: 0.2rem;
+            color: #000;
+            background: #fff;
+
+            & h2 {
+                font-size: 1.25rem;
+            }
+            & h3 {
+                font-size: 0.9rem;
+            }
+        }
+    }
+}
